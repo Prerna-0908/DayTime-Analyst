@@ -68,7 +68,18 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
 }
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 18px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+/* FEATURED PROJECT — ADD THIS BELOW */
+.project-card.featured {
+    border: 1px solid rgba(180, 130, 255, 0.4);
+    box-shadow: 0 0 25px rgba(180, 130, 255, 0.15);
+}
 /* PROJECT CARD */
 .project-card {
     background: rgba(255,255,255,0.08);
@@ -116,3 +127,4 @@ body {
     background: #d6b3ff;
     color: #0d0b21;
 }
+
