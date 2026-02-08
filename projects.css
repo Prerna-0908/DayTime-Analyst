@@ -105,8 +105,10 @@ body {
 
 /* FEATURED PROJECT */
 .project-card.featured {
-    border: 2px solid rgba(180, 130, 255, 0.7);
-    box-shadow: 0 0 35px rgba(180, 130, 255, 0.35);
+    border: 3px solid hotpink;
+    background: rgba(180, 130, 255, 0.25);
+    box-shadow: 0 0 60px rgba(180, 130, 255, 0.8);
+    grid-column: span 3;
 }
 
 /* FEATURED BADGE */
@@ -138,3 +140,4 @@ body {
     background: #d6b3ff;
     color: #0d0b21;
 }
+
