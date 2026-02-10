@@ -128,3 +128,49 @@ body {
 
 /* FEATURED BADGE */
 .featured-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, #b482ff, #7f5cff);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* BUTTON */
+.btn {
+  align-self: flex-start;
+  padding: 10px 18px;
+  border: 1px solid #d6b3ff;
+  color: #d6b3ff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #d6b3ff;
+  color: #0d0b21;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px 30px;
+  }
+
+  .projects-hero h1 {
+    font-size: 42px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-wrapper {
+    margin: 60px 20px;
+  }
+}
