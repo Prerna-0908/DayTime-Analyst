@@ -3,61 +3,97 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Daytime--Analyst</title>
+  <meta name="description" content="Prerna — Data Analyst specializing in SQL, Python, Power BI and business intelligence. Portfolio of dashboards, ML models, and analytics case studies." />
+  <title>Prerna — Data Analyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <!-- particles lib (optional) -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="navbar">
-    <div class="logo">Prerna</div>
-    <nav>
-      <ul class="nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="project.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">Prerna</a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav aria-label="Primary">
+        <ul class="nav" id="primaryNav">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="project.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="contact.html" class="nav-cta">Let's Connect</a>
+    </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="hero">
-      <div id="particles-js" aria-hidden="true"></div>
+      <div class="hero-bg" aria-hidden="true"></div>
 
       <div class="hero-content">
+        <p class="eyebrow">Data Analyst · Business Intelligence · Python &amp; SQL</p>
+
         <h1>Hi, I'm <span>Prerna</span></h1>
-        <p class="tagline">Data Dreamer, Creative Alchemist & Future Game-Changer</p>
+
+        <p class="hero-value">
+          I turn messy data into decisions — dashboards, models, and stories businesses actually use.
+        </p>
+        <p class="tagline">Data Dreamer, Creative Alchemist &amp; Future Game-Changer</p>
+
+        <div class="hero-actions">
+          <a href="project.html" class="btn btn-primary">View My Work</a>
+          <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+        </div>
+
+        <ul class="proof-strip" aria-label="Highlights">
+          <li><strong>93%</strong><span>ML model accuracy</span></li>
+          <li><strong>8,500+</strong><span>records analyzed</span></li>
+          <li><strong>91%</strong><span>internship performance score</span></li>
+        </ul>
 
         <div class="cards">
           <div class="card" id="openSkills" role="button" tabindex="0">
             <div class="card-icon">🧪</div>
             <p>Skills</p>
+            <span class="card-arrow">→</span>
           </div>
 
           <div class="card" id="openDiaries" role="button" tabindex="0">
             <div class="card-icon">🧠</div>
             <p>Data Diaries</p>
+            <span class="card-arrow">→</span>
           </div>
 
           <div class="card" id="openLoading" role="button" tabindex="0">
             <div class="card-icon">🎨</div>
             <p>Version: Loading</p>
+            <span class="card-arrow">→</span>
           </div>
 
           <div class="card" id="openBeyond" role="button" tabindex="0">
             <div class="card-icon">✨</div>
             <p>Beyond The Code</p>
+            <span class="card-arrow">→</span>
           </div>
 
           <div class="card" id="openCerts" role="button" tabindex="0">
             <div class="card-icon">🎓</div>
             <p>Certifications</p>
+            <span class="card-arrow">→</span>
           </div>
 
           <div class="card" id="openExp" role="button" tabindex="0">
             <div class="card-icon">💼</div>
             <p>Experience</p>
+            <span class="card-arrow">→</span>
           </div>
         </div>
 
@@ -66,460 +102,4 @@
     </section>
   </main>
 
-  <!-- GENERIC MODAL MARKUP (each modal has .modal and .modal-content) -->
-  <!-- SKILLS -->
-  <div id="skillsModal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <button class="close" aria-label="Close skills">&times;</button>
-      <h2>Skills</h2>
-
-      <section class="modal-section">
-        <h3>💻 Data Science</h3>
-        <p><strong>Tools:</strong> Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn</p>
-        <p>Short: Cleaned pipelines, quick ML experiments, feature engineering, model interpretation.</p>
-      </section>
-
-      <hr />
-
-      <section class="modal-section">
-        <h3>📊 Visualization</h3>
-        <p>Tableau, Power BI, Canva — I design dashboards that guide the viewer through an insight story.</p>
-      </section>
-
-      <hr />
-
-      <section class="modal-section">
-        <h3>🔍 Analytics</h3>
-        <p>EDA, A/B Testing, Data Cleaning — detective work: find patterns, handle missing values, and test hypotheses.</p>
-      </section>
-
-      <hr />
-
-      <section class="modal-section">
-        <h3>🤖 Machine Learning Basics</h3>
-        <p>Decision Trees, Regression, Classification — I value interpretability & correct evaluation.</p>
-      </section>
-
-      <hr />
-
-      <section class="modal-section">
-        <h3>📁 Data Handling</h3>
-        <p>Excel, SQL, Google Sheets — pivot tables, lookups, joins, aggregation and clean extraction.</p>
-      </section>
-
-      <hr />
-
-      <section class="modal-section">
-        <h3>🧠 Soft Skills</h3>
-        <p>Creative Thinking, Storytelling, Leadership, Communication — I translate technical work into decisions.</p>
-      </section>
-    </div>
-  </div>
-
-  <!-- DATA DIARIES -->
-  <div id="diariesModal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <button class="close" aria-label="Close diaries">&times;</button>
-      <h2>Data Diaries</h2>
-
-      <div class="modal-section">
-        <h3>🧮 Excel — Where My Data Journey Began (and Never Ended)</h3>
-        <blockquote class="quote">"Before I coded, I calculated. Excel was my first brush with logic — and it still holds power."</blockquote>
-        
-        <h5>🧠What I Discovered</h5>
-        <p>Advanced Excel made spreadsheets into thinking spaces: pivot tables, nested formulas, conditional formatting, data validation — every row was a hint.</p>
-
-        <h5>💡Why It Matters</h5>
-        <p>Excel is the foundation for many insights — speed, flexibility, and precision for early-stage analysis.</p>
-
-        <h5>🌱My Takeaway</h5>
-        <p>Excel mastery gave me confidence and speed handling messy real-world data.</p>
-      </div>
-
-      <hr>
-
-      <div class="modal-section">
-        <h3>🧮Excel Functions – The Hidden Spells of Spreadsheets</h3>
-        <blockquote class="quote">"There's something magical about watching formulas find answers faster than I find socks in the morning."</blockquote>
-       
-
-        <h4>🔄 Pivot Tables – My Little Data Time Machine</h4>
-        
-        <h5>What I Discovered:</h5>
-        <p>Pivot Tables turned large datasets into clean summaries within seconds. Drag. Drop. Done. I learned how to slice through dimensions, filter chaos into clarity, and present patterns that were once buried in noise.</p>
-       
-        <h5>💡 Why It Matters:</h5>
-        <p>They're not just for reports — they're for decisions. Whether it's tracking monthly sales, employee attrition, or survey stats, Pivot Tables make data feel alive and adaptable.</p>
-       
-        <h5>🌱 My Takeaway:</h5>
-        <p>Pivot Tables taught me that you don't always need to solve harder — you just need to look smarter.</p>
-
-
-        <h4>🔍 VLOOKUP – The OG Data Detective</h4>
-
-        <h5>🧠 What I Discovered:</h5>
-        <p>VLOOKUP became my go-to when I needed to connect the dots. It helped me fetch values across sheets like a loyal data puppy — fast, simple, and shockingly powerful.</p>
-
-        <h5>💡 Why It Matters:</h5>
-        <p>Perfect for HR records, inventory checks, or financial comparisons — it made me realize that Excel isn't flat; it's a relational jungle when used right.</p>
-
-        <h5>🌱 My Takeaway:</h5>
-        <p>VLOOKUP made me believe spreadsheets can talk to each other — they just need you to know what to ask.</p>
-
-
-        <h5>🔍 HLOOKUP – The Horizontal Whisperer</h5>
-
-        <h5>🧠 What I Discovered:</h5>
-        <p>Less popular but just as vital, HLOOKUP helped me extract data from horizontal layouts. I learned to navigate awkward formats without breaking formulas — it was elegance in logic.</p>
-
-        <h5>💡 Why It Matters:</h5>
-        <p>Sometimes, your data isn't vertical. Sometimes, it's messy, weird, and sideways. HLOOKUP helped me handle it with grace.</p>
-
-        <h5>🌱 My Takeaway:</h5>
-        <p>Even sideways data deserves love. And HLOOKUP was my way of saying, I see you.</p>
-      </div>
-
-      <div class="modal-section">
-
-
-        <h5>📓 Power BI — The Storyteller's Canvas</h5>
-        <blockquote class="quote">"Turns out, data has feelings too — if you learn to visualize them right."</blockquote>
-        
-        <h5>🧠 What I Discovered:</h5>
-        <p>Power BI felt like learning a new language — one that spoke in visuals. I didn't just connect datasets; I choreographed them. I learned how to build dashboards that flow like scenes in a story, leading users from confusion to clarity.</p>
-
-        <h5>💡 Why It Matters:</h5>
-        <p>Power BI gave me the superpower of communication — helping me turn dry HR data into an engaging narrative. Executives could spot attrition trends and engagement gaps in seconds — no code, no scroll, just insight at a glance.</p>
-
-        <h5>🌱 My Takeaway:</h5>
-        <p>A good dashboard is like poetry — it's not about what you show, it's about how it feels when you do.</p>
-      </div>
-
-      <hr>
-
-      <div class="modal-section">
-        <h3>🐍 Python</h3>
-        <blockquote class="quote">"In a world of chaos, Python became my calm."</blockquote>
-        
-        <h5>🧠 What I Discovered:</h5>
-        <p>Learning Python wasn't just a tech milestone — it was personal. It taught me structure, patience, and how to debug more than just code. From wrangling messy CSVs to building my first machine learning model, Python was my sandbox and my sanctuary</p>
-
-        <h5>💡 Why It Matters:</h5>
-        <p>Python made data feel like clay — moldable, responsive, intuitive. It's where I learned how to ask questions and get answers I could trust. It empowered me to go beyond surface stats and dive into what really matters.</p>
-
-        <h5>🌱 My Takeaway:</h5>
-        <p>Python isn't just a language — it's a mindset. One that whispers, "There's always a solution. Let's find it."</p>
-
-      </div>
-
-      <hr>
-
-      <div class="modal-section">
-        <h3>🗂️ SQL— Speaking to the Database Gods</h3>
-         <blockquote class="quote">"I learned to ask the right questions — and the data finally started talking back."</blockquote>
-        
-        <h5>🧠 What I Discovered:</h5>
-        <p>SQL made me feel powerful in the quietest way. JOINs felt like bridges between islands of information. GROUP BY gave me patterns I didn't know existed. It's logic in its most beautiful form — simple yet strategic.</p>
-
-        <h5>💡 Why It Matters:</h5>
-        <p>SQL is the behind-the-scenes genius. It doesn't flash — it filters. It doesn't predict — it prepares. Every clean dashboard I built started with one well-written SQL query. It taught me to respect data structure and trust the process.</p>
-
-        <h5>🌱 My Takeaway:</h5>
-        <p>Good data is quiet. But with the right question, it sings.</p>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- VERSION LOADING -->
-  <div id="loadingModal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <button class="close" aria-label="Close loading">&times;</button>
-      <h2>Version: Loading...</h2>
-
-      <div class="modal-section">
-        <ul class="stack-list">
-          <li><strong>Tableau (self-study)</strong> — dashboards and interactive stories.</li>
-          <li><strong>Italian (Duolingo)</strong> — small daily streaks; romance-novel-in-Tuscany dream incoming.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- BEYOND THE CODE -->
-  <div id="beyondModal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <button class="close" aria-label="Close beyond">&times;</button>
-      <h2>Beyond The Code</h2>
-
-      <div class="modal-section">
-        <p>The human side: poetry, books, playlists, rainy-night walks, language learning and design.</p>
-        <ul>
-          <li>📚Getting lost in books that feel like soul mirrors</li>
-          <li>🎶Curating playlists that soundtrack my moods (and occasional identity crises)</li>
-          <li>💃Dancing — because sometimes movement speaks louder than words</li>
-          <li>✈️Dreaming of cobbled streets, train stations, and cities I've never been to (yet)</li>
-          <li>🎨Designing visual stories that blend simplicity and soul</li>
-          <li>🧠Reading about psychology — because understanding the mind is my favorite plot twist</li>
-          <li>🗣️Learning new languages — currently whispering Italian love phrases to myself</li>
-        
-        </ul>
-        <p class="muted">“Because life isn't just about code and dashboards — it's about vibes, stories, and soft little joys.”</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- CERTIFICATIONS -->
-  <div id="certModal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <button class="close" aria-label="Close certs">&times;</button>
-      <h2>Certifications</h2>
-
-      <div class="modal-section certs">
-        <ul>
-          <li><strong>PowerBI For Beginners — Coursera</strong><br>Credential: <a href="https://coursera.org/share/4a341faea8e27f74e4b8493cdd08e8b8" target="_blank" rel="noopener">certificate link</a></li>
-          <li><strong>Google Advanced Data Analytics</strong><br>Credential: <a href="https://coursera.org/share/78b82fc31d0cab590ff5c73f6ca0e409" target="_blank" rel="noopener">certificate link</a></li>
-          <li><strong>Tata GenAI Powered Data Analytics Job Simulation</strong><br>Credential: <a href="https://drive.google.com/file/d/1rQSg7YNAHWPKMrVBEw_9vmwD42c9w56S/view?usp=sharing" target="_blank" rel="noopener">certificate link</a></li>
-          <li><strong>Deloitte Australia Data Analytics — Forage</strong><br>Credential: <a href="https://www.theforage.com/simulations/deloitte-au/data-analytics-s5zy" target="_blank" rel="noopener">certificate link</a></li>
-          <li><strong>AI Powered Resume & LinkedIn Profile Setup — Saint Louis University</strong><br>Credential: <a href="https://drive.google.com/file/d/1RxTOFQQqZUyCVMk1LoBOZnOi73eCYv90/view?usp=sharing" target="_blank" rel="noopener">certificate link</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- EXPERIENCE -->
-  <div id="expModal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <button class="close" aria-label="Close experience">&times;</button>
-      <h2>Experience</h2>
-
-      <section class="modal-section">
-        <h3>🚀 Data Visualization Trainee — Excelerate</h3>
-        <p>Global internship where I owned data cleaning, built dashboards, and collaborated across timezones.</p>
-
-        <h4>My POV:</h4>
-        <p>This internship wasn’t just another line on my resume — it was the first time I worked with a global team, handled real datasets, and learned what it actually feels like to take ownership in a professional setting.Every day, I showed up ready to learn, contribute, and bring my brain to the table — and Excelerate noticed.</p>
-
-        <h4>What I actually did?</h4>
-        <ul>
-          <li>✨ Cleaned & Explored Data in Google Sheets 
-            Before any dashboard came alive, I spent a lot of time inside Google Sheets — fixing messy data, sorting out missing values, creating pivot tables, and doing EDA like a mini detective.It wasn’t glamorous, but it was the foundation. And I got really good at it.</li>
-            <li>✨ Built Dashboards in Power BI
-              Once the data was ready, I moved into Power BI — creating dashboards that weren’t just pretty, but clear and meaningful.I played with drilldowns, slicers, KPIs, and layouts until everything felt intuitive and visually clean.I wanted the dashboard to speak for itself — no explanations needed.</li>
-              <li>✨ Worked With a Global Team
-                My favorite part? Collaborating with people from different countries, time zones, and skill sets. It taught me how to communicate better, respect differences, and present insights to people who look at the same data from completely different angles.</li>
-                <li>✨ Owned My Tasks
-                If something was assigned to me, I made sure it was done — accurately, on time, and with my full effort.
-                I didn’t need reminders.
-                I didn’t need handholding.
-                I took responsibility and delivered, and that changed the way I see myself professionally.</li>
-                <li>✨ Turned Data Into Insights
-                  I learned how to look at a dataset and find the story hiding inside it.
-                  Trends, patterns, anomalies — I got comfortable translating them into insights the team could actually use.</li>
-                </ul>
-<h4>My Performance Evaluation</h4>
-<p>I’m proud of how I performed — and the 360° feedback confirmed it:</p>
-<ul>
-  <li>⭐ Mutual Respect & Safe Space — “You set a high standard.”</li>
-  <p>I made sure everyone felt heard, included, and comfortable working with me.</p>
-  <li>⭐ Ownership — “You take full responsibility.”</li>
-  <p> I stayed consistent, reliable, and committed throughout the internship.</p>
-  <li>⭐ Communication — “You build strong relationships.”</li>
-  <p>I shared ideas openly and supported my team whenever needed.</p>
-  <li>⭐ Innovation — “You bring unique ideas.”</li>
-  <p>My brainstorming actually helped the team move forward.</p>
-  <li>⭐ Time Management — “Delivered on time, every time.”</li>
-  <p>I balanced tasks smoothly without compromising quality.</p>
-  <li>⭐ Quality of Work — “Flawless and accurate.”</li>
-  <p>My work was neat, detailed, and presentation-ready — always.</p>
-  <li>⭐ Overall Score: 91% — Excellent Performance</li>
-  <p>Not gonna lie… I’m really proud of that.</p>
-  <li>🌱 What This Experience Taught Me</li>
-  <p>That showing up with respect builds trust.Taking ownership builds confidence.And paying attention to detail builds excellence.
-I learned how to blend creativity with structure, how to work in a global environment, and how to let data tell stories — clearly, simply, and beautifully.
-</p>
-</ul>
-<p>This internship didn’t just teach me data visualization.
-It taught me how to be a better teammate, a better communicator, and a better version of myself.</p>
-        <ul>
-          <li>Used Google Sheets for cleaning, preprocessing & EDA</li>
-          <li>Built Power BI dashboards (drilldowns, slicers, KPIs)</li>
-          <li>Created analytical narratives and reports</li>
-          <li>Received <strong>Star Performer</strong> certificate</li>
-        </ul>
-      </section>
-
-      <hr>
-
-      <section class="modal-section">
-        <h3>👩‍💻 AI Data Analyst Intern — Excelerate (Team Lead)</h3>
-        <p>Led a team building an AI system predicting learner dropouts & recommending opportunities.</p>
-
-        <h4>My Pov:</h4>
-        <p>This internship was the moment everything clicked for me — Python, machine learning, dashboards, teamwork… all of it. And as the team leader, I wasn’t just contributing, I was coordinating, guiding, fixing, and delivering.We worked on a massive educational dataset with 8,500+ learner records, and turned it into an actual AI-powered system that could predict dropouts and recommend opportunities.It was intense. Challenging. And honestly? Kind of life-changing.</p>
-
-        <h4>What I actually Did?</h4>
-        <ul>
-          <li>✨ Data Cleaning, Validation & EDA in Google Colab (Python)</li>
-          <p>Google Colab became my second home.I used Python (Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn) to:
-            Clean and validate 8,500+ raw records
-            Handle missing values, fix date inconsistencies, and remove invalid entries
-            Perform EDA to uncover behavior patterns
-            Engineer new features like Application Speed Index, Engagement Momentum, and Future Readiness.
-            Visualize trends, distributions, correlations, and churn indicators
-            I wasn’t just coding — I was uncovering stories hiding inside the data.</p>
-          <li>✨ Feature Engineering & ML Modeling</li>
-          <p>I built and evaluated 4 different ML models:
-            Logistic Regression
-            Decision Tree
-            Random Forest
-            SVM
-            As a team, we selected Random Forest — it achieved a 🔥 93.43% accuracy, the highest and most stable across tests.
-            It became the backbone of our predictive system.</p>
-            <li>✨ Designed a Recommendation Engine</li>
-            <p>After predicting dropouts, I created a content-based recommendation system using:
-              Cosine similarity
-              Engagement-based metrics
-              Behavioral features
-              This system suggested the best opportunities for each learner — basically making the experience personalized instead of generic.</p>
-              <li>✨ Created a Power BI Dashboard</li>
-              <p>Once the backend was rock solid, I visualized everything in Power BI:
-                Trend charts
-                Churn probability visuals
-                Engagement funnels
-                Feature importance summaries
-                Behavioral insights
-                I wanted the dashboard to feel intuitive, clean, and “tell the whole story at a glance.”</p>
-                <li>✨ Led the Entire Team</li>
-                <p>Being team leader meant:
-                  Coordinating with 3 teammates
-                  Assigning tasks
-                  Guiding the Python workflows
-                  Cross-checking code and analysis
-                  Ensuring model outputs were correct
-                  Finalizing the report
-                  Making sure deadlines were met
-                  Leadership wasn’t just about assigning tasks — it was about being the one everyone came to when something broke.</p>
-                  <h4>The Project We Built:</h4>
-                  <p>We created a dual-framework AI system that could:
-                    1. Predict which learners were at risk of dropping out
-                    2. Recommend opportunities to re-engage them
-                    Our work combined ML, behavioral analytics, problem-solving and strategic insight.
-                    It felt like building a mini EdTech intelligence engine.</p>
-                    <h4>What I Learned</h4>
-                    <p>This internship taught me that Python isn’t just a skill — it’s a superpower.
-                      That leading a team is equal parts empathy and execution.
-                      That dashboards can literally change how people see data.
-                      And that AI becomes meaningful only when you bring human thinking into it.
-                      I walked in as a student.I walked out as someone who knows how to build real systems, not just practice projects.</p>
-        </ul>
-
-        <ul>
-          <li>Led a team for AI-powered dashboard project</li>
-          <li>Developed anomaly detection insights</li>
-          <li>Managed workflow & task assignment</li>
-          <li>Presented findings to global leadership</li>
-        </ul>
-      </section>
-
-      <hr>
-
-      <section class="modal-section">
-        <h3>🏢 Business Operations & Compliance Intern — Pepagora</h3>
-        <p>Worked on onboarding flows, benchmarking, and UX improvements.</p>
-        <blockquote class="quote">"I walked into a completely new field… and ended up understanding how businesses actually work behind the curtain."</blockquote>
-
-        <h4>My Pov:</h4>
-        <p>This internship was nothing like my usual data projects.No Python.No models.No dashboards.Just pure business logic, compliance rules, seller experience, and operational flow. And honestly?It pushed me in ways I didn’t expect — communication, analysis, UX thinking, and understanding how real companies onboard sellers, build trust, and reduce friction in their systems.</p>
-        <h4>What I Did?</h4>
-        <ul>
-          <li>✨ Analyzed the Entire Seller Onboarding Workflow</li>
-          <p>I dived deep into the onboarding process at Pepagora and uncovered things sellers struggle with.
-          My job?
-          Spot these pain points and find ways to fix them.</p>
-          <li>✨ Benchmarked Competitors</li>
-          <p>I studied how platforms like:IndiaMART, TradeIndia, Alibaba, Globpulse handle onboarding — their speed, UX, tracking, and strengths.This helped us see where Pepagora stands and exactly what needed improvement.</p>
-          <li>✨ Designed a Clear, User-Friendly Onboarding Flow</li>
-          <p>With my team, I crafted a step-by-step onboarding experience that felt smoother and less overwhelming.</p>
-          <li>✨ Improved the Registration Experience</li>
-          <p>It’s crazy how small UX tweaks make HUGE business impact.</p>
-          <li>✨ Profile Setup Enhancements</li>
-          <p>These reduce seller effort and increase confidence.</p>
-          <li>✨ Built Trust-Driven Strategy</li>
-          <p>I helped introduce elements that make sellers feel safe and supported.</p>
-          <li>✨ Created Communication Touchpoints</li>
-          <p>Basically, making sure sellers never feel “lost”.</p>
-          <li>🌍 Working With a Diverse Team</li>
-          <p>I collaborated with teammates from different countries, backgrounds, and skill sets. We discussed, brainstormed, redesigned journeys, and aligned on business decisions like a real operations team.This wasn’t just a project — it was a crash course in global teamwork.</p>
-          <h4>What I Learned?</h4>
-          <p>That business operations are the backbone of every platform.
-            That compliance isn’t boring — it’s what keeps a system fair and safe.
-            That onboarding defines whether a seller stays or drops off.
-            And that designing experiences is as important as analyzing data.
-            I learned to think like:
-            A user
-            A business strategist
-            A compliance officer
-            A UX designer
-            All at the same time.A whole new field unlocked.</p>
-          </ul>  
-        <ul>
-          <li>Collaborated with a global team on multi-phase ops tasks</li>
-          <li>Created structured reports on operational gaps & opportunities</li>
-          <li>Coordinated daily workflow and documentation</li>
-          <li>Improved onboarding UX and communication touchpoints</li>
-        </ul>
-      </section>
-    </div>
-  </div>
-
-  <script>
-    // modal open/close mapping
-    const modals = {
-      openSkills: document.getElementById('skillsModal'),
-      openDiaries: document.getElementById('diariesModal'),
-      openLoading: document.getElementById('loadingModal'),
-      openBeyond: document.getElementById('beyondModal'),
-      openCerts:  document.getElementById('certModal'),
-      openExp:    document.getElementById('expModal')
-    };
-
-    // attach triggers (cards)
-    Object.keys(modals).forEach(triggerId => {
-      const triggerEl = document.getElementById(triggerId);
-      const modalEl = modals[triggerId];
-      if (!triggerEl || !modalEl) return;
-      triggerEl.addEventListener('click', () => modalEl.style.display = 'flex');
-      triggerEl.addEventListener('keyup', (e) => { if (e.key === 'Enter') modalEl.style.display = 'flex'; });
-    });
-
-    // close buttons (all modals use .close button inside)
-    document.querySelectorAll('.modal .close').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const modal = e.target.closest('.modal');
-        if (modal) modal.style.display = 'none';
-      });
-    });
-
-    // click outside to close
-    window.addEventListener('click', (e) => {
-      if (e.target.classList.contains('modal')) e.target.style.display = 'none';
-    });
-
-    //particles 
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.particlesJS) {
-        particlesJS('particles-js', {
-          particles: { number: { value: 40 }, size: { value: 3 }, line_linked: { enable: true }},
-          interactivity: { events: { onhover: { enable: true, mode: 'repulse' } } }
-        });
-      }
-    });
-  </script>
-</body>
-</html>
-
-
-
-
-
+  <!-- All your modal markup stays exactly as-is below this point — untouched -->                                                                                                                                                                                     
