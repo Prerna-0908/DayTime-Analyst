@@ -80,4 +80,285 @@ th,td{padding:8px 12px;text-align:left;white-space:nowrap;border-bottom:1px soli
 tr:last-child td{border-bottom:0}
 th{background:var(--fill2);font-weight:700}
 td{transition:background .9s,color .4s}
-td.fx{background:rgba(var(--mintrgb),.14);color:va
+td.fx{background:rgba(var(--mintrgb),.14);color:var(--mint)}
+td.bad{color:var(--peach)}
+tr.fade td{opacity:.3;text-decoration:line-through}
+tr.gone{display:none}
+.cap{font-weight:700;margin-bottom:14px}
+.bar2{display:grid;grid-template-columns:62px 1fr 32px;gap:12px;align-items:center;margin-bottom:14px;font-weight:700}
+.bar2 i{display:block;height:24px;border-radius:99px;width:0;transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
+.on-bars .bar2 i{width:var(--w)}
+.bar2:nth-child(2) i{background:linear-gradient(90deg,var(--lilac2),var(--lilac))}
+.bar2:nth-child(3) i{background:linear-gradient(90deg,var(--peach2),var(--peach))}
+.note{color:var(--muted);font-size:.88rem;margin:12px 0;min-height:2.9em}
+.pc{padding:26px;display:flex;flex-direction:column;gap:14px}
+.pc p{color:var(--muted)}
+.pc .btn{align-self:flex-start;margin-top:auto}
+.code{background:var(--codebg);border:1px solid var(--line);border-radius:14px;padding:14px;font-family:var(--mono);font-size:.76rem;overflow-x:auto}
+.code .k{color:var(--lilac);font-weight:700}
+.code .r{margin-top:12px;display:grid;gap:7px}
+.code .row{display:grid;grid-template-columns:62px 1fr 34px;gap:10px;align-items:center}
+.code .row i{display:block;height:9px;border-radius:99px;background:linear-gradient(90deg,var(--lilac),var(--peach));width:var(--w)}
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.sk{padding:24px}
+.sk i{font-style:normal;font-size:1.5rem;display:block;margin-bottom:10px}
+.sk p{color:var(--muted);font-size:.93rem;margin:4px 0 14px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;padding:0;margin:0;list-style:none}
+.chips li{font-size:.8rem;font-weight:600;padding:3px 12px;border-radius:99px;border:1px solid rgba(var(--lilacrgb),.35);background:rgba(var(--lilacrgb),.08)}
+/* experience */
+.job{display:grid;grid-template-columns:230px 1fr;gap:12px 30px;padding:24px 26px;margin-bottom:16px;border-left:4px solid var(--c)}
+.pill{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:.74rem;font-weight:700;padding:3px 12px;border-radius:99px;color:var(--c);border:1px solid var(--c)}
+.job ul{margin:0;padding-left:19px}
+.job li{margin-bottom:6px;color:var(--li)}
+.win{display:inline-block;margin-top:8px;font-weight:700;color:var(--mint)}
+/* certs, diaries */
+.cd{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
+.certs{list-style:none;padding:6px 24px;margin:0}
+.certs li{padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:14px}
+.certs li:last-child{border-bottom:0}
+.certs small{display:block;color:var(--muted);font-size:.86rem}
+.dg{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.dq{padding:20px}
+.dq b{font-family:var(--mono);font-size:.78rem;color:var(--c);letter-spacing:.06em;text-transform:uppercase}
+.dq q{display:block;margin-top:8px;font-style:italic;line-height:1.45;quotes:none;color:var(--q)}
+/* end */
+.end{text-align:center;padding:56px 24px;background:linear-gradient(135deg,rgba(var(--lilacrgb),.14),rgba(var(--peachrgb),.1))}
+.end p{color:var(--muted);max-width:50ch;margin:0 auto 24px}
+.end .cta{justify-content:center}
+footer{padding:44px 0 54px;color:var(--muted);font-size:.88rem;text-align:center}
+@media (max-width:900px){.hero,.two,.cd{grid-template-columns:1fr}.viz{justify-self:start;width:min(100%,300px)}.tiles{grid-template-columns:1fr 1fr}.jump{grid-template-columns:1fr 1fr 1fr}.job{grid-template-columns:1fr}.top .wrap{grid-template-columns:1fr auto}.links{grid-column:1/-1;grid-row:2;justify-content:flex-start;margin-top:10px;gap:18px}}
+@media (max-width:560px){.jump{grid-template-columns:1fr 1fr}.dg{grid-template-columns:1fr}body{font-size:16px}}
+</style>
+</head>
+<body>
+<nav class="top" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="index.html">Prerna<span>.</span></a>
+    <div class="links">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="project.html">Projects</a>
+      <a href="lab.html">Analytics Lab</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="right">
+       <a class="btn pri sm" href="resume.pdf">Resume</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main" class="wrap">
+  <header class="hero">
+    <div>
+      <span class="tag">Data Analyst · SQL · Python · Power BI</span>
+      <h1>Hi, I'm <span>Prerna</span></h1>
+      <p class="lede">I turn messy data into decisions: dashboards, models, and stories businesses actually use.</p>
+      <p class="tagline">Data Dreamer, Creative Alchemist &amp; Future Game-Changer</p>
+      <div class="cta">
+        <a class="btn pri" href="project.html">View Projects</a>
+        <a class="btn" href="resume.pdf">Download Resume</a>
+      </div>
+    </div>
+    <div class="viz card" role="img" aria-label="Illustration of rising bars with a growth curve">
+      <svg viewBox="0 0 340 300" aria-hidden="true">
+        <defs>
+          <linearGradient id="bg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--lilac)" stop-opacity=".95"/><stop offset="1" style="stop-color:var(--lilac2)" stop-opacity=".4"/></linearGradient>
+          <linearGradient id="cg1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:var(--lilac)"/><stop offset="1" style="stop-color:var(--peach)"/></linearGradient>
+        </defs>
+        <g class="bars">
+          <rect style="--i:0" x="28" y="212" width="36" height="58" rx="6" fill="url(#bg1)"/>
+          <rect style="--i:1" x="90" y="180" width="36" height="90" rx="6" fill="url(#bg1)"/>
+          <rect style="--i:2" x="152" y="145" width="36" height="125" rx="6" fill="url(#bg1)"/>
+          <rect style="--i:3" x="214" y="105" width="36" height="165" rx="6" fill="url(#bg1)"/>
+          <rect style="--i:4" x="276" y="65" width="36" height="205" rx="6" fill="url(#bg1)"/>
+        </g>
+        <path class="curve" pathLength="100" d="M22 198 C 90 176, 118 150, 160 126 S 252 72, 294 46" fill="none" stroke="url(#cg1)" stroke-width="4" stroke-linecap="round"/>
+        <g class="dotc"><circle cx="294" cy="46" r="15" fill="none" stroke="var(--peach)" stroke-opacity=".35"/><circle cx="294" cy="46" r="7" fill="var(--peach)"/></g>
+      </svg>
+    </div>
+  </header>
+
+  <div class="tiles">
+    <div class="tile card"><b>5</b><span>Projects</span></div>
+    <div class="tile card"><b>3</b><span>Internships</span></div>
+    <div class="tile card"><b>5</b><span>Certifications</span></div>
+    <div class="tile card"><b class="stack">SQL · Python · Power BI</b><span>Core stack</span></div>
+  </div>
+  <nav class="jump" aria-label="Jump to a section">
+    <a class="card" href="#skills"><i>🧪</i><b>Skills</b><small>Tools &amp; techniques across analytics and ML</small></a>
+    <a class="card" href="#experience"><i>💼</i><b>Experience</b><small>Internships in analytics, AI &amp; operations</small></a>
+    <a class="card" href="#certs"><i>🎓</i><b>Certifications</b><small>Coursera, Forage &amp; job simulations</small></a>
+    <a class="card" href="project.html"><i>📊</i><b>Projects</b><small>Dashboards, models &amp; case studies</small></a>
+    <a class="card" href="contact.html"><i>📮</i><b>Contact</b><small>Let's talk data, roles &amp; opportunities</small></a>
+  </nav>
+
+  <section aria-labelledby="feat-h">
+    <h2 id="feat-h">See how I work</h2>
+    <p class="sub">Watch a messy table turn into an insight, then query a dataset yourself in the Analytics Lab.</p>
+    <div class="two">
+      <div class="demo card" aria-labelledby="demo-h">
+        <div class="steps" id="steps" aria-hidden="true"><span>1 Raw data</span><span>2 Clean</span><span>3 Insight</span></div>
+        <h3 id="demo-h">What my first hour with a dataset looks like</h3>
+        <div class="stage" id="stage">
+          <div class="tbl" id="tbl"><table><thead><tr><th>id</th><th>signup_date</th><th>city</th><th>sessions</th></tr></thead><tbody id="rows"></tbody></table></div>
+          <div id="chartp" hidden>
+            <p class="cap">Average sessions per week, by city</p>
+            <div class="bar2"><span>Leeds</span><i style="--w:90%"></i><b>4.5</b></div>
+            <div class="bar2"><span>Austin</span><i style="--w:70%"></i><b>3.5</b></div>
+          </div>
+        </div>
+        <p class="note" id="note" role="status" aria-live="polite"></p>
+        <button class="btn pri sm" id="go" type="button">Clean the data</button>
+      </div>
+      <div class="pc card">
+        <h3>Analytics Lab</h3>
+        <p>A learner-retention dataset loaded into SQL inside your browser. Filter the dashboard, find who is likely to drop out, and run your own queries.</p>
+        <div class="code" aria-label="Example query and result">
+          <div><span class="k">SELECT</span> channel, <span class="k">ROUND</span>(100 * <span class="k">AVG</span>(dropped), 1)<br><span class="k">FROM</span> learners <span class="k">GROUP BY</span> channel;</div>
+          <div class="r">
+            <div class="row"><span>Social</span><i style="--w:96%"></i><span>48.2</span></div>
+            <div class="row"><span>Email</span><i style="--w:82%"></i><span>41.0</span></div>
+            <div class="row"><span>Organic</span><i style="--w:78%"></i><span>38.8</span></div>
+            <div class="row"><span>Referral</span><i style="--w:66%"></i><span>32.9</span></div>
+          </div>
+        </div>
+        <a class="btn pri" href="lab.html">Open the lab</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" aria-labelledby="sk-h">
+    <h2 id="sk-h">Skills</h2>
+    <p class="sub">Grouped by the job each tool does for me.</p>
+    <div class="skills">
+      <div class="sk card"><i>🗄️</i><h3>Getting the data</h3><p>Joins and aggregation behind every dashboard I build.</p><ul class="chips"><li>SQL</li><li>Excel</li><li>Google Sheets</li></ul></div>
+      <div class="sk card"><i>🔍</i><h3>Cleaning and exploring</h3><p>Missing values, odd dates, patterns and outliers.</p><ul class="chips"><li>Python</li><li>Pandas</li><li>NumPy</li><li>EDA</li><li>A/B testing</li></ul></div>
+      <div class="sk card"><i>📈</i><h3>Telling the story</h3><p>Dashboards that lead the viewer to the insight.</p><ul class="chips"><li>Power BI</li><li>Tableau</li><li>Matplotlib</li><li>Seaborn</li><li>Canva</li></ul></div>
+      <div class="sk card"><i>🤖</i><h3>Modelling</h3><p>Interpretable models with correct evaluation.</p><ul class="chips"><li>Scikit-learn</li><li>Random Forest</li><li>Logistic Regression</li><li>Decision Trees</li><li>CatBoost</li></ul></div>
+    </div>
+  </section>
+
+  <section id="experience" aria-labelledby="ex-h">
+    <h2 id="ex-h">Experience</h2>
+    <p class="sub">Three internships, from dashboards to machine learning to business operations.</p>
+    <div class="job card" style="--c:var(--lilac)">
+      <div><h3>AI Data Analyst Intern, team lead</h3><span class="pill">Excelerate</span></div>
+      <ul>
+        <li>Led three teammates to build a system that predicts learner dropout and recommends opportunities.</li>
+        <li>Cleaned and validated 8,500+ records in Python, and engineered features such as Application Speed Index and Engagement Momentum.</li>
+        <li>Compared four models. Random Forest was the most stable and reached 93.43% accuracy.</li>
+        <li>Built a content-based recommender using cosine similarity, and a Power BI dashboard for churn and engagement.</li>
+      </ul>
+    </div>
+    <div class="job card" style="--c:var(--peach)">
+      <div><h3>Data Visualization Trainee</h3><span class="pill">Excelerate</span></div>
+      <div><ul>
+        <li>Cleaned data and ran EDA in Google Sheets, including pivot tables and handling missing values.</li>
+        <li>Built Power BI dashboards with drilldowns, slicers and KPIs.</li>
+        <li>Worked with a global team across time zones.</li>
+      </ul><span class="win">Star Performer certificate, 91% in the 360° review</span></div>
+    </div>
+    <div class="job card" style="--c:var(--mint)">
+      <div><h3>Business Operations and Compliance Intern</h3><span class="pill">Pepagora</span></div>
+      <ul>
+        <li>Analysed the seller onboarding workflow and found where sellers struggled.</li>
+        <li>Benchmarked IndiaMART, TradeIndia, Alibaba and Globpulse.</li>
+        <li>Helped design a clearer onboarding flow and better communication touchpoints.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="certs" aria-labelledby="cd-h">
+    <div class="cd">
+      <div>
+        <h2 id="cd-h">Certifications</h2>
+        <p class="sub">Coursera, Forage and job simulations.</p>
+        <ul class="certs card">
+          <li><div>Google Advanced Data Analytics<small>Coursera</small></div><a href="https://coursera.org/share/78b82fc31d0cab590ff5c73f6ca0e409">View</a></li>
+          <li><div>Power BI for Beginners<small>Coursera</small></div><a href="https://coursera.org/share/4a341faea8e27f74e4b8493cdd08e8b8">View</a></li>
+          <li><div>GenAI Powered Data Analytics<small>Tata job simulation</small></div><a href="https://drive.google.com/file/d/1rQSg7YNAHWPKMrVBEw_9vmwD42c9w56S/view?usp=sharing">View</a></li>
+          <li><div>Data Analytics<small>Deloitte Australia, Forage</small></div><a href="https://www.theforage.com/simulations/deloitte-au/data-analytics-s5zy">View</a></li>
+          <li><div>AI Powered Resume and LinkedIn Profile Setup<small>Saint Louis University</small></div><a href="https://drive.google.com/file/d/1RxTOFQQqZUyCVMk1LoBOZnOi73eCYv90/view?usp=sharing">View</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Data diaries</h2>
+        <p class="sub">What each tool taught me.</p>
+        <div class="dg">
+          <div class="dq card" style="--c:var(--lilac)"><b>Excel</b><q>Before I coded, I calculated.</q></div>
+          <div class="dq card" style="--c:var(--peach)"><b>SQL</b><q>I learned to ask the right questions, and the data finally started talking back.</q></div>
+          <div class="dq card" style="--c:var(--mint)"><b>Python</b><q>In a world of chaos, Python became my calm.</q></div>
+          <div class="dq card" style="--c:var(--lilac)"><b>Power BI</b><q>Data has feelings too, if you learn to visualise them right.</q></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="end-h">
+    <div class="end card">
+      <h2 id="end-h">Looking for a data analyst?</h2>
+      <p>I'm open to reporting and data analyst roles. Tell me about the questions your data should be answering.</p>
+      <div class="cta"><a class="btn pri" href="contact.html">Get in touch</a><a class="btn" href="resume.pdf">Download Resume</a></div>
+    </div>
+  </section>
+</main>
+
+<footer>Prerna. Data Dreamer, Creative Alchemist &amp; Future Game-Changer.</footer>
+
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var DATA=[
+    [['101','101'],['15/03/2025','2025-03-15'],['  leeds ','Leeds'],['5','5']],
+    [['102','102'],['2025-3-15','2025-03-15'],['LEEDS','Leeds'],['N/A','4']],
+    [['102','102'],['2025-3-15','2025-03-15'],['LEEDS','Leeds'],['N/A','4']],
+    [['103','103'],['16 Mar 25','2025-03-16'],['austin','Austin'],['3','3']],
+    [['104','104'],['3/17/25','2025-03-17'],['Austin ','Austin'],['-1','4']]
+  ];
+  var DUP=2,tbody=$('rows'),btn=$('go'),note=$('note'),stage=0,busy=false,anim=[],autoT=null,auto=false,started=false;
+  var pills=$('steps').children,NOTES=[
+    'Mixed date formats, stray spaces, inconsistent capitals, a duplicate row and invalid values.',
+    '5 rows in, 4 rows out: dates standardised, text trimmed, duplicate dropped, missing and invalid values filled.',
+    'Leeds learners log about one more session a week than Austin. Built from the table you just watched being cleaned. Illustration only.'
+  ],LABELS=['Clean the data','Find the insight','Replay'];
+  function build(){
+    tbody.innerHTML='';
+    DATA.forEach(function(r){var tr=document.createElement('tr');
+      r.forEach(function(c){var td=document.createElement('td');td.textContent=c[0].replace(/ /g,'\u00a0');if(c[0]!==c[1])td.className='bad';td.dataset.clean=c[1];tr.appendChild(td)});
+      tbody.appendChild(tr)});
+  }
+  function setStage(n){
+    stage=n;
+    for(var i=0;i<3;i++)pills[i].className=i===n?'on':(i<n?'done':'');
+    note.textContent=NOTES[n];btn.textContent=LABELS[n];
+    $('tbl').hidden=n===2;$('chartp').hidden=n!==2;
+    $('stage').classList.remove('on-bars');
+    if(n===2){if(reduce)$('stage').classList.add('on-bars');else requestAnimationFrame(function(){requestAnimationFrame(function(){$('stage').classList.add('on-bars')})})}
+  }
+  function reset(){anim.forEach(clearTimeout);anim=[];busy=false;btn.disabled=false;build();setStage(0)}
+  function clean(){
+    if(reduce){Array.prototype.forEach.call(tbody.querySelectorAll('td'),function(td){td.textContent=td.dataset.clean;td.className=''});tbody.children[DUP].className='gone';setStage(1);return}
+    var cells=[];busy=true;btn.disabled=true;note.textContent='Cleaning…';
+    Array.prototype.forEach.call(tbody.children,function(tr,ri){if(ri!==DUP)Array.prototype.forEach.call(tr.children,function(td){if(td.className==='bad')cells.push(td)})});
+    cells.forEach(function(td,i){anim.push(setTimeout(function(){td.textContent=td.dataset.clean;td.className='fx'},i*170))});
+    anim.push(setTimeout(function(){tbody.children[DUP].className='fade'},cells.length*170+150));
+    anim.push(setTimeout(function(){tbody.children[DUP].className='gone';
+      Array.prototype.forEach.call(tbody.querySelectorAll('td.fx'),function(td){td.className=''});
+      busy=false;btn.disabled=false;setStage(1);
+      if(auto)autoT=setTimeout(function(){if(auto&&stage===1)setStage(2)},1500)},cells.length*170+800));
+  }
+  btn.addEventListener('click',function(){
+    if(busy)return;auto=false;clearTimeout(autoT);
+    if(stage===0)clean();else if(stage===1)setStage(2);else reset();
+  });
+  reset();
+  // start the demo by itself once it scrolls into view
+  if(!reduce&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting&&!started){started=true;auto=true;o.disconnect();autoT=setTimeout(function(){if(auto&&stage===0&&!busy)clean()},900)}})},{threshold:.5}).observe($('stage'));
+  }
+})();
+</script>
+</body>
+</html>
