@@ -1,109 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Prerna</title>
-
-    <!-- ✅ THIS CONNECTS CSS -->
-    <link rel="stylesheet" href="projects.css">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — Prerna, Data Analyst</title>
+<meta name="description" content="Five analytics projects framed as business questions: automation, fraud detection, recommendations, HR attrition and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="projects-grid">
-
-    <!-- FEATURED PROJECT -->
-    <div class="project-card featured">
-        <span class="featured-badge">FEATURED ✨</span>
-
-        <h2>Automated Analytics System</h2>
-
-        <p>
-            Built an end-to-end analytics pipeline that cleans data, generates KPIs,
-            predicts sales trends using machine learning, and triggers automated alerts
-            with email notifications. Includes an interactive Streamlit dashboard.
-        </p>
-
-        <div class="tech">
-            Python • Pandas • Scikit-learn • Streamlit • Automation
-        </div>
-
-        <a href="https://github.com/Prerna-0908/Auto-Insights-Analytics-System"
-           target="_blank"
-           class="btn">
-            View Project →
-        </a>
+<nav class="top" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="index.html">Prerna<span>.</span></a>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="project.html" aria-current="page">Projects</a>
+      <a href="lab.html">Analytics Lab</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </div>
+    <div class="right"><a class="btn pri sm" href="resume.pdf">Resume</a></div>
+  </div>
+</nav>
 
-
-    <!-- PROJECT 2 -->
-    <div class="project-card">
-        <h2>Fake Job Detection Analysis</h2>
-        <p>
-            Analyzed job listings to detect fraudulent postings using EDA, feature engineering,
-            and classification techniques. Identified key fraud patterns and visualized insights.
-        </p>
-        <div class="tech">
-            Python • NLP • Machine Learning • Matplotlib
-        </div>
-        <a href="https://github.com/Prerna-0908/Fake-Job-Analysis"
-           target="_blank"
-           class="btn">
-            View Code →
-        </a>
+<main id="main" class="wrap pg">
+  <header class="ph">
+    <div>
+      <span class="tag">Projects · Business analysis</span>
+      <h1>Five projects, <span>five business questions.</span></h1>
+      <p class="lede">I start with the question a business would ask, then build the data work around it: cleaning, modelling, dashboards and a clear recommendation.</p>
+      <div class="cta"><a class="btn pri" href="#work">Explore the work</a><a class="btn" href="#proof">What each one proves</a></div>
     </div>
-
-
-    <!-- PROJECT 3 -->
-    <div class="project-card">
-        <h2>AI Interview Question Generator</h2>
-        <p>
-            Adaptive interview prep platform generating domain-specific questions,
-            tracking user confidence, and delivering structured explanations.
-        </p>
-        <div class="tech">
-            Python • Streamlit • Pandas • Rule-Based AI
-        </div>
-        <a href="https://ai-question-generator.streamlit.app"
-           target="_blank"
-           class="btn">
-            Live Demo →
-        </a>
+    <div class="card qsw">
+    <p class="qh">The five questions</p>
+    <ol class="qs" aria-label="The five questions">
+      <li style="--c:var(--lilac)"><a href="#p1">How can a team get fresh KPIs and early warnings without rebuilding reports by hand?</a></li>
+      <li style="--c:var(--peach)"><a href="#p2">Which job postings are fraudulent, and what gives them away?</a></li>
+      <li style="--c:var(--mint)"><a href="#p3">How can interview practice adapt to what a learner is unsure about?</a></li>
+      <li style="--c:var(--lilac)"><a href="#p4">Which products are bought together, and what should we recommend?</a></li>
+      <li style="--c:var(--peach)"><a href="#p5">Where is employee attrition concentrated, and what can retention strategy target?</a></li>
+    </ol>
     </div>
+  </header>
 
-
-    <!-- PROJECT 4 -->
-    <div class="project-card">
-        <h2>Market Basket Analysis</h2>
-        <p>
-            Performed association rule mining using the Apriori algorithm to uncover
-            product purchase patterns and generate data-driven recommendations.
-        </p>
-        <div class="tech">
-            Python • Apriori • Data Mining • Machine Learning
-        </div>
-        <a href="https://github.com/Prerna-092005/Market-Basket-Analysis"
-           target="_blank"
-           class="btn">
-            View Code →
-        </a>
+  <section aria-labelledby="m-h">
+    <h2 id="m-h">How I approach a business problem</h2>
+    <p class="sub">The same four moves sit behind every project below.</p>
+    <div class="method">
+      <div class="mstep card"><h3>Frame the question</h3><p>Turn a vague need into a question the data can answer, with a clear definition of success.</p></div>
+      <div class="mstep card"><h3>Prepare the data</h3><p>Clean, validate and shape it, because every later step depends on trustworthy inputs.</p></div>
+      <div class="mstep card"><h3>Analyse and model</h3><p>Explore patterns, track the right KPIs and use models only where they help.</p></div>
+      <div class="mstep card"><h3>Recommend and deliver</h3><p>Package the answer as a dashboard, alert or app that people will actually use.</p></div>
     </div>
+  </section>
 
-
-    <!-- PROJECT 5 -->
-    <div class="project-card">
-        <h2>HR Attrition Analysis</h2>
-        <p>
-            Analyzed employee data to identify attrition trends and built dashboards
-            to support retention strategies.
-        </p>
-        <div class="tech">
-            Power BI • Python • Data Analysis • Visualization
-        </div>
-        <a href="#"
-           class="btn">
-            View Project →
-        </a>
+  <section id="work" aria-labelledby="w-h">
+    <h2 id="w-h">The work</h2>
+    <p class="sub">Filter by what you care about. Open any brief for the question, approach and deliverable.</p>
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button class="chip" type="button" data-f="all" aria-pressed="true">All</button>
+      <button class="chip" type="button" data-f="ml" aria-pressed="false">Machine learning</button>
+      <button class="chip" type="button" data-f="apps" aria-pressed="false">Dashboards &amp; apps</button>
+      <button class="chip" type="button" data-f="insights" aria-pressed="false">Business insights</button>
+      <button class="chip" type="button" data-f="auto" aria-pressed="false">Automation</button>
     </div>
+    <p class="count" id="count" role="status" aria-live="polite">Showing all 5 projects</p>
 
-</section>
+    <div class="pgrid">
+      <article class="pcard feat card" id="p1" data-n="01" data-t="ml apps auto" style="--c:var(--lilac)">
+        <div class="ptop"><span class="pnum">PROJECT 1</span><span class="badge">Featured</span></div>
+        <h3>Automated Analytics System</h3>
+        <p class="pq">How can a team get fresh KPIs and early warnings without rebuilding reports by hand?</p>
+        <p class="d">An end-to-end analytics pipeline that cleans data, generates KPIs, predicts sales trends with machine learning, and triggers automated alerts with email notifications. It includes an interactive Streamlit dashboard.</p>
+        <div class="pipe" id="pipe">
+          <h4>Click a stage to see what it does</h4>
+          <div class="nodes">
+            <button class="node" type="button" data-d="Incoming data lands in the pipeline, ready to be processed on every run."><span class="ni" aria-hidden="true">📥</span><span>Raw data</span></button>
+            <button class="node" type="button" data-d="The pipeline cleans the data automatically, so nobody fixes the same errors by hand twice."><span class="ni" aria-hidden="true">🧹</span><span>Clean</span></button>
+            <button class="node" type="button" data-d="Key performance indicators are generated each run, so numbers are consistent every time."><span class="ni" aria-hidden="true">📐</span><span>KPIs</span></button>
+            <button class="node" type="button" data-d="A machine learning model predicts sales trends, so the team can look ahead instead of back."><span class="ni" aria-hidden="true">📈</span><span>Forecast</span></button>
+            <button class="node" type="button" data-d="Automated alerts trigger with email notifications when something needs attention."><span class="ni" aria-hidden="true">🔔</span><span>Alerts</span></button>
+            <button class="node" type="button" data-d="An interactive Streamlit dashboard puts the KPIs, forecast and alerts in one place."><span class="ni" aria-hidden="true">🖥️</span><span>Dashboard</span></button>
+          </div>
+          <p class="pdesc" id="pdesc" aria-live="polite">Click a stage to follow the data through the system.</p>
+        </div>
+        <details class="brief"><summary>Read the case brief</summary>
+          <dl><dt>Question</dt><dd>How can a team stay on top of its numbers without manual report-building?</dd>
+          <dt>Approach</dt><dd>Automate cleaning and KPI generation, then add a machine learning forecast for sales trends.</dd>
+          <dt>Deliverable</dt><dd>Automated email alerts and an interactive Streamlit dashboard.</dd>
+          <!-- ADD RESULT: add a real metric here if you have one, for example the forecast error or hours saved -->
+          </dl>
+        </details>
+        <ul class="tools" aria-label="Tools"><li>Python</li><li>Pandas</li><li>Scikit-learn</li><li>Streamlit</li><li>Automation</li></ul>
+        <div class="plinks"><a class="btn pri sm" href="https://github.com/Prerna-0908/Auto-Insights-Analytics-System" target="_blank" rel="noopener">View project</a></div>
+      </article>
+
+      <article class="pcard card" id="p2" data-n="02" data-t="ml insights" style="--c:var(--peach)">
+        <div class="ptop"><span class="pnum">PROJECT 2</span></div>
+        <h3>Fake Job Detection Analysis</h3>
+        <p class="pq">Which job postings are fraudulent, and what gives them away?</p>
+        <p class="d">Analysed job listings to detect fraudulent postings using EDA, feature engineering and classification, then visualised the key fraud patterns.</p>
+        <details class="brief"><summary>Read the case brief</summary>
+          <dl><dt>Question</dt><dd>What separates a fake posting from a real one?</dd>
+          <dt>Approach</dt><dd>Explore the listings, engineer features from the text and details, and train classifiers.</dd>
+          <dt>Deliverable</dt><dd>Visualised fraud patterns and a model that flags suspicious postings.</dd>
+          <!-- ADD RESULT: add your best model's accuracy or recall here -->
+          </dl>
+        </details>
+        <ul class="tools" aria-label="Tools"><li>Python</li><li>NLP</li><li>Machine Learning</li><li>Matplotlib</li></ul>
+        <div class="plinks"><a class="btn sm" href="https://github.com/Prerna-0908/Fake-Job-Analysis" target="_blank" rel="noopener">View code</a></div>
+      </article>
+
+      <article class="pcard card" id="p3" data-n="03" data-t="apps" style="--c:var(--mint)">
+        <div class="ptop"><span class="pnum">PROJECT 3</span><span class="badge" style="background:var(--mint)">Live demo</span></div>
+        <h3>AI Interview Question Generator</h3>
+        <p class="pq">How can interview practice adapt to what a learner is unsure about?</p>
+        <p class="d">An adaptive interview-prep platform that generates domain-specific questions, tracks user confidence, and delivers structured explanations.</p>
+        <details class="brief"><summary>Read the case brief</summary>
+          <dl><dt>Question</dt><dd>How do you make practice focus on a learner's weak spots?</dd>
+          <dt>Approach</dt><dd>Rule-based question generation by domain, with confidence tracking per answer.</dd>
+          <dt>Deliverable</dt><dd>A live Streamlit app with structured explanations.</dd></dl>
+        </details>
+        <ul class="tools" aria-label="Tools"><li>Python</li><li>Streamlit</li><li>Pandas</li><li>Rule-based AI</li></ul>
+        <div class="plinks"><a class="btn pri sm" href="https://ai-question-generator.streamlit.app" target="_blank" rel="noopener">Open live demo</a></div>
+      </article>
+
+      <article class="pcard card" id="p4" data-n="04" data-t="ml insights" style="--c:var(--lilac)">
+        <div class="ptop"><span class="pnum">PROJECT 4</span></div>
+        <h3>Market Basket Analysis</h3>
+        <p class="pq">Which products are bought together, and what should we recommend?</p>
+        <p class="d">Association rule mining with the Apriori algorithm to uncover product purchase patterns and generate data-driven recommendations.</p>
+        <details class="brief"><summary>Read the case brief</summary>
+          <dl><dt>Question</dt><dd>Which items do customers tend to buy together?</dd>
+          <dt>Approach</dt><dd>Mine association rules with Apriori and rank them by strength.</dd>
+          <dt>Deliverable</dt><dd>Purchase patterns and product recommendations a retailer could act on.</dd>
+          <!-- ADD RESULT: add your strongest rule, for example "customers who buy X also buy Y" with its lift -->
+          </dl>
+        </details>
+        <ul class="tools" aria-label="Tools"><li>Python</li><li>Apriori</li><li>Data Mining</li><li>Machine Learning</li></ul>
+        <div class="plinks"><a class="btn sm" href="https://github.com/Prerna-092005/Market-Basket-Analysis" target="_blank" rel="noopener">View code</a></div>
+      </article>
+
+      <article class="pcard card" id="p5" data-n="05" data-t="apps insights" style="--c:var(--peach)">
+        <div class="ptop"><span class="pnum">PROJECT 5</span></div>
+        <h3>HR Attrition Analysis</h3>
+        <p class="pq">Where is employee attrition concentrated, and what can retention strategy target?</p>
+        <p class="d">Analysed employee data to identify attrition trends, and built dashboards to support retention strategies.</p>
+        <details class="brief"><summary>Read the case brief</summary>
+          <dl><dt>Question</dt><dd>Which groups of employees are leaving, and what do they have in common?</dd>
+          <dt>Approach</dt><dd>Analyse attrition trends in Python, then build Power BI dashboards.</dd>
+          <dt>Deliverable</dt><dd>Dashboards that help HR plan retention strategies.</dd>
+          <!-- ADD RESULT: add your headline finding, for example the attrition rate or the biggest driver -->
+          </dl>
+        </details>
+        <ul class="tools" aria-label="Tools"><li>Power BI</li><li>Python</li><li>Data Analysis</li><li>Visualization</li></ul>
+        <div class="plinks"><span class="soon">Project link coming soon</span>
+        <!-- When ready, replace the line above with: <a class="btn pri sm" href="YOUR-LINK-HERE" target="_blank" rel="noopener">View project</a> --></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="proof" aria-labelledby="pr-h">
+    <h2 id="pr-h">What each project proves</h2>
+    <p class="sub">The business analyst skills each project demonstrates, side by side.</p>
+    <div class="card">
+      <div class="mwrap">
+        <table class="mx">
+          <thead><tr><th scope="col">Project</th><th scope="col">Cleaning &amp; EDA</th><th scope="col">KPIs &amp; metrics</th><th scope="col">Modelling</th><th scope="col">Dashboards &amp; apps</th><th scope="col">Insights &amp; recommendations</th><th scope="col">Automation</th></tr></thead>
+          <tbody>
+            <tr style="--c:var(--lilac)"><th scope="row">1 Automated Analytics</th><td><span class="dot y" title="Yes"></span></td><td><span class="dot y" title="Yes"></span></td><td><span class="dot y" title="Yes"></span></td><td><span class="dot y" title="Yes"></span></td><td><span class="dot y" title="Yes"></span></td><td><span class="dot y" title="Yes"></span></td></tr>
+            <tr style="--c:var(--peach)"><th scope="row">2 Fake Job Detection</th><td><span class="dot y" title="Yes"></span></td><td><span class="dot" title="Not a focus"></span></td><td><span class="dot y" title="Yes"></span></td><td><span class="dot y" title="Yes"></span></td><td><span class="dot y" title="Yes"></span></td><td><span class="dot" title="Not a focus"></span></td></tr>
+            <tr style="--c:var(--mint)"><th scope="row">3 Interview Generator</th><td><span class="dot" title="Not a focus"></span></td><td><span class="dot y" title="Yes"></span></td><td><span class="dot" title="Not a focus"></span></td><td><span class="dot y" title="Yes"></span></td><td><span class="dot" title="Not a focus"></span></td><td><span class="dot y" title="Yes"></span></td></tr>
+            <tr style="--c:var(--lilac)"><th scope="row">4 Market Basket</th><td><span class="dot" title="Not a focus"></span></td><td><span class="dot" title="Not a focus"></span></td><td><span class="dot y" title="Yes"></span></td><td><span class="dot" title="Not a focus"></span></td><td><span class="dot y" title="Yes"></span></td><td><span class="dot" title="Not a focus"></span></td></tr>
+            <tr style="--c:var(--peach)"><th scope="row">5 HR Attrition</th><td><span class="dot y" title="Yes"></span></td><td><span class="dot y" title="Yes"></span></td><td><span class="dot" title="Not a focus"></span></td><td><span class="dot y" title="Yes"></span></td><td><span class="dot y" title="Yes"></span></td><td><span class="dot" title="Not a focus"></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="legend">Filled circle: a key part of the project. Empty circle: not a focus.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="c-h">
+    <div class="case card">
+      <div>
+        <h2 id="c-h">Beyond personal projects: learner dropout at Excelerate</h2>
+        <p>As team lead on my AI Data Analyst internship, I built a system that predicts which learners are likely to drop out and recommends opportunities to them. It combined Python modelling, feature engineering and a Power BI dashboard.</p>
+        <div class="cta"><a class="btn pri" href="lab.html">Try the Analytics Lab</a><a class="btn" href="index.html#experience">See the experience</a></div>
+      </div>
+      <div class="kp">
+        <div><b>8,500+</b><span>records cleaned and validated</span></div>
+        <div><b>4</b><span>models compared</span></div>
+        <div><b>93.43%</b><span>Random Forest accuracy</span></div>
+        <div><b>3</b><span>teammates led</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="end-h">
+    <div class="end card">
+      <h2 id="end-h">Have a business question?</h2>
+      <p>I'd like to hear it. Tell me what your data should be answering and I'll tell you how I'd approach it.</p>
+      <div class="cta"><a class="btn pri" href="contact.html">Get in touch</a><a class="btn" href="resume.pdf">Download Resume</a></div>
+    </div>
+  </section>
+</main>
+
+<footer>Prerna. Data Dreamer, Creative Alchemist &amp; Future Game-Changer.</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)},all=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // gentle reveal on scroll (only when JS and motion are available)
+  if(!reduce&&'IntersectionObserver' in window){
+    var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}})},{threshold:.12});
+    all('.pg .mstep, .pg .pcard, .pg .mwrap, .pg .case, .pg .end').forEach(function(el){el.classList.add('reveal');ro.observe(el)});
+  }
+
+  // filters
+  var chips=all('.chip'),cards=all('.pcard'),count=$('#count');
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    var f=c.dataset.f,n=0;
+    chips.forEach(function(x){x.setAttribute('aria-pressed',x===c)});
+    cards.forEach(function(p){var show=f==='all'||p.dataset.t.split(' ').indexOf(f)>-1;p.hidden=!show;if(show)n++});
+    count.textContent=f==='all'?'Showing all '+n+' projects':'Showing '+n+' of '+cards.length+' projects';
+  })});
+
+  // pipeline
+  var nodes=all('.node'),desc=$('#pdesc'),timer=null,played=false;
+  function show(i){
+    nodes.forEach(function(n,k){n.classList.toggle('on',k===i);n.classList.toggle('done',k<i)});
+    desc.textContent=nodes[i].dataset.d;
+  }
+  nodes.forEach(function(n,i){n.addEventListener('click',function(){clearInterval(timer);show(i)})});
+  function play(){
+    var i=0;show(0);
+    timer=setInterval(function(){i++;if(i>=nodes.length){clearInterval(timer);return}show(i)},1100);
+  }
+  if(!reduce&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting&&!played){played=true;o.disconnect();play()}})},{threshold:.6}).observe($('#pipe'));
+  }
+})();
+</script>
+</body>
+</html>
