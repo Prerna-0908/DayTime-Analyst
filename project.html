@@ -10,10 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="project.css">
-<script>
-/* animations are switched on only when the browser supports them and the visitor allows motion */
-if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('anim')}
-</script>
 </head>
 <body>
 <div class="sp" id="sp" aria-hidden="true"></div>
@@ -159,3 +155,132 @@ if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-moti
         <p class="pq">Where is employee attrition concentrated, and what can retention strategy target?</p>
         <p class="d">Analysed employee data to identify attrition trends, and built dashboards to support retention strategies.</p>
         <details class="brief"><summary>Read the case brief</summary>
+          <dl><dt>Approach</dt><dd>Explore employee data to find where attrition clusters, then track the drivers on a dashboard.</dd>
+          <dt>Deliverable</dt><dd>Dashboards that show attrition trends and point retention efforts at the right groups.</dd>
+          <!-- ADD RESULT: add a real finding here, for example the department with the highest attrition -->
+          </dl>
+        </details>
+        <ul class="tools" aria-label="Tools"><li>Data analysis</li><li>Dashboards</li><li>Visualisation</li></ul>
+        <div class="plinks"><span class="soon">Code link coming soon</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="proof" aria-labelledby="s-h">
+    <h2 id="s-h">What each project proves</h2>
+    <p class="sub">The skills behind each project, at a glance.</p>
+    <div class="card mwrap" id="skills">
+      <table class="mx">
+        <thead>
+          <tr><th scope="col">Project</th><th scope="col">Data prep</th><th scope="col">EDA</th><th scope="col">Machine learning</th><th scope="col">Visualisation</th><th scope="col">Dashboards &amp; apps</th><th scope="col">Automation</th></tr>
+        </thead>
+        <tbody>
+          <tr style="--c:var(--lilac);--r:0"><th scope="row">Automated Analytics System</th><td><span class="dot y" aria-label="Yes"></span></td><td><span class="dot" aria-label="No"></span></td><td><span class="dot y" aria-label="Yes"></span></td><td><span class="dot y" aria-label="Yes"></span></td><td><span class="dot y" aria-label="Yes"></span></td><td><span class="dot y" aria-label="Yes"></span></td></tr>
+          <tr style="--c:var(--peach);--r:1"><th scope="row">Fake Job Detection</th><td><span class="dot y" aria-label="Yes"></span></td><td><span class="dot y" aria-label="Yes"></span></td><td><span class="dot y" aria-label="Yes"></span></td><td><span class="dot y" aria-label="Yes"></span></td><td><span class="dot" aria-label="No"></span></td><td><span class="dot" aria-label="No"></span></td></tr>
+          <tr style="--c:var(--mint);--r:2"><th scope="row">AI Interview Generator</th><td><span class="dot" aria-label="No"></span></td><td><span class="dot" aria-label="No"></span></td><td><span class="dot" aria-label="No"></span></td><td><span class="dot" aria-label="No"></span></td><td><span class="dot y" aria-label="Yes"></span></td><td><span class="dot" aria-label="No"></span></td></tr>
+          <tr style="--c:var(--lilac);--r:3"><th scope="row">Market Basket Analysis</th><td><span class="dot y" aria-label="Yes"></span></td><td><span class="dot" aria-label="No"></span></td><td><span class="dot y" aria-label="Yes"></span></td><td><span class="dot" aria-label="No"></span></td><td><span class="dot" aria-label="No"></span></td><td><span class="dot" aria-label="No"></span></td></tr>
+          <tr style="--c:var(--peach);--r:4"><th scope="row">HR Attrition Analysis</th><td><span class="dot" aria-label="No"></span></td><td><span class="dot y" aria-label="Yes"></span></td><td><span class="dot" aria-label="No"></span></td><td><span class="dot y" aria-label="Yes"></span></td><td><span class="dot y" aria-label="Yes"></span></td><td><span class="dot" aria-label="No"></span></td></tr>
+          <tr class="tot"><th scope="row">Projects using it</th><td>3</td><td>2</td><td>3</td><td>3</td><td>3</td><td>1</td></tr>
+        </tbody>
+      </table>
+      <p class="legend">A filled dot means the skill is a core part of that project. Edit the dots to match your own work.</p>
+    </div>
+  </section>
+
+  <section id="case" class="case card" aria-labelledby="c-h">
+    <div>
+      <h2 id="c-h">Case study: Automated Analytics System</h2>
+      <p>My featured project turns a manual reporting routine into a pipeline. It cleans the data, generates KPIs, forecasts sales trends and emails alerts, and a Streamlit dashboard brings it all together.</p>
+      <a class="btn pri" href="https://github.com/Prerna-0908/Auto-Insights-Analytics-System" target="_blank" rel="noopener">See the project</a>
+    </div>
+    <div class="kp">
+      <div><b>5</b><span>Projects</span></div>
+      <div><b>6</b><span>Pipeline stages</span></div>
+      <div><b>3</b><span>Machine learning projects</span></div>
+      <div><b>1</b><span>Live demo</span></div>
+    </div>
+  </section>
+</main>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var motionOk = !matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window;
+  if(motionOk) root.classList.add('anim');
+
+  /* reveal on scroll */
+  var targets = document.querySelectorAll('.reveal,.method,.mwrap');
+  if(motionOk){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var el = e.target;
+        el.classList.add('in');
+        setTimeout(function(){ el.classList.add('settled'); }, 900);
+        io.unobserve(el);
+      });
+    },{threshold:0.12});
+    targets.forEach(function(el){ io.observe(el); });
+  }
+
+  /* filters */
+  var chips = document.querySelectorAll('.chip'),
+      cards = document.querySelectorAll('.pcard'),
+      count = document.getElementById('count');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      var f = chip.dataset.f, n = 0;
+      chips.forEach(function(c){ c.setAttribute('aria-pressed', String(c === chip)); });
+      cards.forEach(function(card){
+        var show = f === 'all' || card.dataset.t.split(' ').indexOf(f) > -1;
+        card.hidden = !show;
+        if(show) n++;
+      });
+      count.textContent = f === 'all' ? 'Showing all ' + n + ' projects'
+                                      : 'Showing ' + n + ' of ' + cards.length + ' projects';
+    });
+  });
+
+  /* pipeline: click a stage */
+  var nodes = document.querySelectorAll('.vp .node');
+  nodes.forEach(function(node, i){
+    node.addEventListener('click', function(){
+      nodes.forEach(function(n, j){
+        n.classList.toggle('on', j === i);
+        n.classList.toggle('done', j < i);
+        n.parentElement.classList.toggle('done', j < i);
+      });
+    });
+  });
+  if(nodes[0]) nodes[0].click();
+
+  /* spotlight follows the mouse on cards */
+  cards.forEach(function(card){
+    var spot = document.createElement('span');
+    spot.className = 'spot';
+    spot.setAttribute('aria-hidden','true');
+    card.insertBefore(spot, card.firstChild);
+    card.addEventListener('mousemove', function(e){
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  /* scroll progress bar + section bar highlight */
+  var sp = document.getElementById('sp');
+  var links = document.querySelectorAll('#sn a');
+  var secs = Array.prototype.map.call(links, function(a){ return document.querySelector(a.getAttribute('href')); });
+  function onScroll(){
+    var h = document.documentElement;
+    sp.style.transform = 'scaleX(' + (h.scrollTop / ((h.scrollHeight - h.clientHeight) || 1)) + ')';
+    var cur = 0;
+    secs.forEach(function(s, i){ if(s && s.getBoundingClientRect().top < 200) cur = i; });
+    links.forEach(function(a, i){ a.setAttribute('aria-current', String(i === cur)); });
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+</body>
+</html>
