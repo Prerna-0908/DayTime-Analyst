@@ -1,0 +1,22 @@
+/* Analytics Lab extras. Load AFTER style.css and project.css */
+.lh{grid-template-columns:1fr;padding-bottom:0}
+.lab .pgrid{grid-template-columns:1fr}
+.lab section{margin-top:56px}
+.ed{width:100%;box-sizing:border-box;font-family:var(--mono);font-size:.88rem;line-height:1.5;padding:14px;border-radius:14px;border:1px solid var(--line);background:var(--fill2);color:var(--ink);resize:vertical;min-height:110px;position:relative}
+.ed:focus{outline:2px solid var(--lilac);outline-offset:2px}
+.row{position:relative;display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+.tw{position:relative;overflow:auto;max-height:340px;border:1px solid var(--line);border-radius:14px}
+.dt{width:100%;border-collapse:collapse;font-size:.88rem;font-family:var(--mono)}
+.dt th,.dt td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+.dt th{position:sticky;top:0;background:var(--fill2);color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.05em}
+.dt .chg{background:rgba(var(--lilacrgb),.18);font-weight:700}
+.dt .gone{opacity:.45;text-decoration:line-through}
+.msg{position:relative;color:var(--muted);font-size:.9rem;margin:0}
+.msg.err{color:#d6455d;font-family:var(--mono)}
+.meter{position:relative;height:12px;border-radius:12px;background:var(--line);overflow:hidden}
+.meter i{display:block;height:100%;width:0;border-radius:12px;background:var(--mint);transition:width .6s ease,background .3s}
+.meter i.mid{background:var(--peach)}
+.meter i.hi{background:#e5484d}
+.verdict{position:relative;font-weight:800;font-size:1.15rem;margin:0}
+.flags{position:relative;margin:0;padding-left:20px;color:var(--li);line-height:1.7}
+.fixes{position:relative;margin:0;padding-left:20px;color:var(--li);line-height:1.7;font-size:.92rem}
