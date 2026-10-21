@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analytics Lab — Prerna, Data Analyst</title>
+<meta name="description" content="Interactive demos: a SQL playground, a fake job red-flag checker and a data cleaning before and after.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="project.css">
+<link rel="stylesheet" href="lab.css">
+</head>
+<body>
+<div class="sp" id="sp" aria-hidden="true"></div>
+<nav class="top" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="index.html">Prerna<span>.</span></a>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="project.html">Projects</a>
+      <a href="lab.html" aria-current="page">Analytics Lab</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="right"><a class="btn pri sm" href="resume.pdf">Resume</a></div>
+  </div>
+</nav>
+
+<main id="main" class="wrap pg lab">
+  <header class="ph lh">
+    <span class="orb o3" aria-hidden="true"></span><span class="orb o1" aria-hidden="true"></span><span class="orb o2" aria-hidden="true"></span>
+    <div>
+      <span class="tag fx" style="--d:0">Analytics Lab · Try it yourself</span>
+      <h1 class="fx" style="--d:1">Three small tools, <span>built to be played with.</span></h1>
+      <p class="lede fx" style="--d:2">Run real SQL, score a job posting for red flags, and see what data cleaning actually changes. Everything runs in your browser.</p>
+    </div>
+  </header>
+
+  <nav class="sn card" id="sn" aria-label="On this page">
+    <a href="#sql">SQL playground</a><a href="#fake">Job red-flag checker</a><a href="#clean">Cleaning demo</a>
+  </nav>
+
+  <div class="pgrid">
+    <section id="sql" aria-labelledby="sql-h">
+      <article class="pcard card reveal" data-n="01" style="--c:var(--lilac)">
+        <div class="ptop"><span class="pnum">TOOL 1</span><span class="badge">Real SQLite</span></div>
+        <h3 id="sql-h">SQL Playground</h3>
+        <p class="pq">Which departments lose the most people, and does overtime play a part?</p>
+        <p class="d">Query a sample HR table (<code>employees</code>, 120 synthetic rows with department, age, salary, tenure_years, overtime and left_company). Pick an example or write your own. Ctrl+Enter runs it.</p>
+        <div class="row" id="ex">
+          <button class="chip" type="button" data-q="SELECT department, COUNT(*) AS staff, SUM(left_company='Yes') AS leavers, ROUND(100.0*SUM(left_company='Yes')/COUNT(*),1) AS attrition_pct FROM employees GROUP BY department ORDER BY attrition_pct DESC;">Attrition by department</button>
+          <button class="chip" type="button" data-q="SELECT overtime, COUNT(*) AS staff, ROUND(100.0*SUM(left_company='Yes')/COUNT(*),1) AS attrition_pct, ROUND(AVG(salary)) AS avg_salary FROM employees GROUP BY overtime;">Overtime effect</button>
+          <button class="chip" type="button" data-q="SELECT * FROM employees ORDER BY salary DESC LIMIT 5;">Top earners</button>
+        </div>
+        <textarea class="ed" id="q" spellcheck="false" aria-label="SQL query">SELECT * FROM employees LIMIT 10;</textarea>
+        <div class="row"><button class="btn pri sm" id="run" type="button">Run query</button><p class="msg" id="sqlmsg">Loading SQL engine…</p></div>
+        <div class="tw" id="sqlout" hidden></div>
+      </article>
+    </section>
+
+    <section id="fake" aria-labelledby="f-h">
+      <article class="pcard card reveal" data-n="02" style="--c:var(--peach)">
+        <div class="ptop"><span class="pnum">TOOL 2</span><span class="badge" style="background:var(--peach)">Rule-based demo</span></div>
+        <h3 id="f-h">Job Red-Flag Checker</h3>
+        <p class="pq">Which job postings are fraudulent, and what gives them away?</p>
+        <p class="d">Paste a job posting and see which warning signs it triggers. This is a simple rule-based demo of the patterns I found in my Fake Job Detection project, not the trained model.</p>
+        <textarea class="ed" id="job" spellcheck="false" aria-label="Job posting text" placeholder="Paste a job posting here…"></textarea>
+        <div class="row"><button class="btn pri sm" id="chk" type="button">Check posting</button><button class="btn sm" id="samp" type="button">Try a suspicious example</button></div>
+        <div id="fres" hidden>
+          <p class="verdict" id="verdict"></p>
+          <div class="meter" aria-hidden="true"><i id="bar"></i></div>
+          <ul class="flags" id="flags"></ul>
+        </div>
+      </article>
+    </section>
+
+    <section id="clean" aria-labelledby="c-h">
+      <article class="pcard card reveal" data-n="03" style="--c:var(--mint)">
+        <div class="ptop"><span class="pnum">TOOL 3</span><span class="badge" style="background:var(--mint)">Before / after</span></div>
+        <h3 id="c-h">Data Cleaning Demo</h3>
+        <p class="pq">What does "cleaning the data" actually change?</p>
+        <p class="d">Switch between a messy employee table and its cleaned version. Highlighted cells show what was fixed.</p>
+        <div class="row" role="group" aria-label="View">
+          <button class="chip" type="button" data-v="raw" aria-pressed="true">Before (messy)</button>
+          <button class="chip" type="button" data-v="clean" aria-pressed="false">After (clean)</button>
+        </div>
+        <div class="tw"><table class="dt" id="ct"></table></div>
+        <ul class="fixes" id="fixes"></ul>
+      </article>
+    </section>
+  </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+<script>
+(function(){
+  var root=document.documentElement;
+  var motionOk=!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window;
+  if(motionOk) root.classList.add('anim');
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function $(id){return document.getElementById(id)}
+
+  /* reveal on scroll */
+  if(motionOk){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting)return;var el=e.target;el.classList.add('in');
+      setTimeout(function(){el.classList.add('settled')},900);io.unobserve(el);
+    })},{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  }
+
+  /* card spotlight */
+  document.querySelectorAll('.pcard').forEach(function(card){
+    var s=document.createElement('span');s.className='spot';s.setAttribute('aria-hidden','true');card.insertBefore(s,card.firstChild);
+    card.addEventListener('mousemove',function(e){var r=card.getBoundingClientRect();
+      card.style.setProperty('--mx',(e.clientX-r.left)+'px');card.style.setProperty('--my',(e.clientY-r.top)+'px')});
+  });
+
+  /* ---------- 1. SQL playground ---------- */
+  var db=null,msg=$('sqlmsg'),out=$('sqlout');
+  function seed(){
+    var s=7;function rnd(){s=(s*9301+49297)%233280;return s/233280}
+    var depts=['Sales','Engineering','HR','Finance','Support'];
+    db.run("CREATE TABLE employees(id INTEGER,department TEXT,age INTEGER,salary INTEGER,tenure_years INTEGER,overtime TEXT,left_company TEXT)");
+    var st=db.prepare("INSERT INTO employees VALUES(?,?,?,?,?,?,?)");
+    for(var i=1;i<=120;i++){
+      var d=depts[Math.floor(rnd()*5)],age=22+Math.floor(rnd()*30),ten=Math.floor(rnd()*14),
+          ot=rnd()<0.35?'Yes':'No',sal=30000+Math.floor(rnd()*60000)+(d==='Engineering'?15000:0),
+          p=0.08+(ot==='Yes'?0.22:0)+(ten<3?0.12:0)+(d==='Sales'?0.08:0);
+      st.run([i,d,age,sal,ten,ot,rnd()<p?'Yes':'No']);
+    }
+    st.free();
+  }
+  function run(){
+    if(!db){msg.textContent='The SQL engine is not loaded yet.';return}
+    try{
+      var res=db.exec($('q').value);
+      if(!res.length){msg.className='msg';msg.textContent='Query ran. No rows returned.';out.hidden=true;return}
+      var r=res[0],h='<table class="dt"><thead><tr>'+r.columns.map(function(c){return '<th>'+esc(c)+'</th>'}).join('')+'</tr></thead><tbody>';
+      r.values.forEach(function(row){h+='<tr>'+row.map(function(v){return '<td>'+esc(v===null?'NULL':v)+'</td>'}).join('')+'</tr>'});
+      out.innerHTML=h+'</tbody></table>';out.hidden=false;
+      msg.className='msg';msg.textContent=r.values.length+' row'+(r.values.length===1?'':'s')+' returned.';
+    }catch(e){msg.className='msg err';msg.textContent=e.message;out.hidden=true}
+  }
+  if(window.initSqlJs){
+    initSqlJs({locateFile:function(f){return 'https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/'+f}}).then(function(SQL){
+      db=new SQL.Database();seed();msg.textContent='Ready. Table: employees.';run();
+    }).catch(function(){msg.className='msg err';msg.textContent='Could not load the SQL engine. Check your connection.'});
+  }else{msg.className='msg err';msg.textContent='Could not load the SQL engine. Check your connection.'}
+  $('run').addEventListener('click',run);
+  $('q').addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&e.key==='Enter')run()});
+  $('ex').addEventListener('click',function(e){var b=e.target.closest('[data-q]');if(!b)return;$('q').value=b.dataset.q;run()});
+
+  /* ---------- 2. Job red-flag checker ---------- */
+  var rules=[
+    {re:/wire|western union|send money|processing fee|registration fee|security deposit|pay (a |the )?(fee|deposit)/i,pts:35,msg:'Asks for money upfront'},
+    {re:/aadhaar|passport|bank account|card number|\bssn\b|\botp\b|account details/i,pts:25,msg:'Asks for sensitive personal or bank details'},
+    {re:/whatsapp|telegram|@gmail\.com|@yahoo\.com|@hotmail\.com/i,pts:20,msg:'Uses personal contact (WhatsApp, Telegram or a free email)'},
+    {re:/(earn|income|salary|pay).{0,40}(per day|daily|per week|weekly|per hour)/i,pts:20,msg:'Promises unusually quick or high pay'},
+    {re:/no (experience|skills|qualification)|anyone can apply|no interview/i,pts:15,msg:'No experience or interview needed'},
+    {re:/urgent|immediate(ly)? (hiring|joining)|apply now|limited (seats|slots|vacancies)|hurry/i,pts:15,msg:'Pressure and urgency wording'}
+  ];
+  function check(){
+    var t=$('job').value.trim();if(!t)return;
+    var score=0,fl=[],words=t.split(/\s+/).length;
+    rules.forEach(function(r){if(r.re.test(t)){score+=r.pts;fl.push(r.msg)}});
+    if(words<40){score+=15;fl.push('Very little detail ('+words+' words)')}
+    if(!/company|about us|we are|our team|headquarter/i.test(t)){score+=10;fl.push('No clear information about the company')}
+    score=Math.min(score,100);
+    var lvl=score<25?'lo':score<55?'mid':'hi',lab={lo:'Low risk',mid:'Medium risk',hi:'High risk'}[lvl];
+    $('fres').hidden=false;$('verdict').textContent=lab+' · score '+score+'/100';
+    var bar=$('bar');bar.className=lvl;bar.style.width='0';requestAnimationFrame(function(){requestAnimationFrame(function(){bar.style.width=Math.max(score,4)+'%'})});
+    $('flags').innerHTML=fl.length?fl.map(function(m){return '<li>'+esc(m)+'</li>'}).join(''):'<li>No red flags found by these rules. Still verify the company independently.</li>';
+  }
+  $('chk').addEventListener('click',check);
+  $('samp').addEventListener('click',function(){
+    $('job').value='URGENT hiring! Work from home and earn 5000 per day. No experience needed, anyone can apply. Pay a small registration fee of 500 to confirm your seat and send your Aadhaar number on WhatsApp.';check();
+  });
+
+  /* ---------- 3. Cleaning demo ---------- */
+  var H=['id','name','city','age','salary','joined'];
+  var D=[
+    {r:[1,'  priya sharma ','DELHI',28,'₹52,000','2023-01-15'],c:[1,'Priya Sharma','Delhi',28,52000,'2023-01-15'],ch:[1,2,4]},
+    {r:[2,'Rahul Verma','delhi','','48000','15/02/2023'],c:[2,'Rahul Verma','Delhi',27,48000,'2023-02-15'],ch:[2,3,5]},
+    {r:[2,'Rahul Verma','delhi','','48000','15/02/2023'],drop:true},
+    {r:[3,'AMIT KUMAR','Noida','twenty five','51,000','2023-03-01'],c:[3,'Amit Kumar','Noida',25,51000,'2023-03-01'],ch:[1,3,4]},
+    {r:[4,'neha singh','Ghaziabad',27,'N/A','2023-04-10'],c:[4,'Neha Singh','Ghaziabad',27,51000,'2023-04-10'],ch:[1,4]}
+  ];
+  var fixes=['Trimmed spaces and fixed name and city capitalisation','Removed one duplicate row (id 2)','Turned text numbers into numbers (“twenty five” → 25) and removed ₹ and commas','Filled missing age with the median (27) and “N/A” salary with the median (51,000)','Standardised dates to YYYY-MM-DD'];
+  function draw(v){
+    var h='<thead><tr>'+H.map(function(x){return '<th>'+x+'</th>'}).join('')+'</tr></thead><tbody>';
+    D.forEach(function(row){
+      if(v==='clean'){
+        if(row.drop)return;
+        h+='<tr>'+row.c.map(function(x,i){return '<td'+(row.ch.indexOf(i)>-1?' class="chg"':'')+'>'+esc(x)+'</td>'}).join('')+'</tr>';
+      }else{
+        h+='<tr'+(row.drop?' class="gone"':'')+'>'+row.r.map(function(x){return '<td>'+(x===''?'<em>missing</em>':esc(x))+'</td>'}).join('')+'</tr>';
+      }
+    });
+    $('ct').innerHTML=h+'</tbody>';
+    $('fixes').innerHTML=v==='clean'?fixes.map(function(f){return '<li>'+esc(f)+'</li>'}).join(''):'';
+  }
+  var vb=document.querySelectorAll('[data-v]');
+  vb.forEach(function(b){b.addEventListener('click',function(){
+    vb.forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});draw(b.dataset.v)})});
+  draw('raw');
+
+  /* progress bar + section bar highlight */
+  var sp=$('sp'),links=document.querySelectorAll('#sn a'),
+      secs=Array.prototype.map.call(links,function(a){return document.querySelector(a.getAttribute('href'))});
+  function onScroll(){
+    var h=document.documentElement;
+    sp.style.transform='scaleX('+(h.scrollTop/((h.scrollHeight-h.clientHeight)||1))+')';
+    var cur=-1;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<220)cur=i});
+    links.forEach(function(a,i){a.setAttribute('aria-current',String(i===cur))});
+  }
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+</script>
+</body>
+</html>
