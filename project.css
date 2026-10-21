@@ -149,3 +149,6 @@ section[id]{scroll-margin-top:130px}
 @media (max-width:900px){.ph,.case,.fgrid{grid-template-columns:1fr}.method{grid-template-columns:1fr 1fr}.mstep:after{display:none!important}.pgrid{grid-template-columns:1fr}.orb{display:none}.sn{top:calc(var(--navh,110px) + 8px)}}
 @media (max-width:560px){.method{grid-template-columns:1fr}.brief dl{grid-template-columns:1fr;gap:2px}.brief dt{padding-top:8px}.pcard:after{font-size:3.4rem}.sn a{padding:8px 12px}}
 @media (prefers-reduced-motion:reduce){.fx,.qsw,.qs li,.orb,.case:before,.node.on .ni{animation:none}.pcard,.qs a,.chip,.kp div{transition:none}.brief[open] dl{animation:none}}
+
+/* ---------- safety net: if JavaScript is off, never hide content ---------- */
+@media (scripting:none){.anim .reveal,.anim .mwrap .dot.y{opacity:1;transform:none}.anim .rg i:after{transform:none}}
