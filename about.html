@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About — Prerna, Data Analyst</title>
-<meta name="description" content="About Prerna: how I think about data, the tools I use, and the kind of role I am looking for.">
+<meta name="description" content="About Prerna: a data analyst who starts with the business question. Explore my profile as a dataset, my skills radar and my story.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -34,68 +34,61 @@
     <span class="orb o3" aria-hidden="true"></span><span class="orb o1" aria-hidden="true"></span><span class="orb o2" aria-hidden="true"></span>
     <div>
       <span class="tag fx" style="--d:0">About me</span>
-      <h1 class="fx" style="--d:1">Hi, I'm Prerna. <span>I turn questions into answers.</span></h1>
-      <p class="lede fx" style="--d:2">I'm an aspiring data analyst who likes starting with the business question and ending with something people can actually use.</p>
-      <div class="cta fx" style="--d:3"><a class="btn pri" href="contact.html">Get in touch</a><a class="btn" href="project.html">See my work</a></div>
+      <h1 class="fx" style="--d:1">I read the story <span>hiding inside the data.</span></h1>
+      <p class="lede fx" style="--d:2" id="tagline"></p>
+      <div class="cta fx" style="--d:3"><a class="btn pri" href="contact.html">Let's talk</a><a class="btn" href="project.html">See my work</a></div>
     </div>
     <div class="card me">
-      <!-- To use your photo: replace the letter with <img src="prerna.jpg" alt="Prerna"> and upload prerna.jpg -->
-      <div class="avatar" aria-hidden="true">P</div>
-      <h2>Prerna</h2>
-      <p>Data Analyst</p>
-      <div class="row"><a class="btn sm" href="https://github.com/Prerna-0908" target="_blank" rel="noopener">GitHub</a><a class="btn sm" href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div class="avatar" id="avatar" aria-hidden="true">P</div>
+      <h2 id="mename">Prerna</h2>
+      <p id="merole"></p>
+      <div class="row" id="melinks"></div>
     </div>
   </header>
 
-  <section id="story" aria-labelledby="st-h">
-    <h2 id="st-h">My story</h2>
-    <div class="card story reveal">
-      <!-- EDIT: replace these three paragraphs with your own words -->
-      <p>I got into data because I like finding the reason behind a number. A chart is only useful if it changes a decision, so I try to begin every project with the question someone would actually ask.</p>
-      <p>My work so far covers the full path: cleaning messy data, exploring it, building models where they help, and packaging the result as a dashboard, alert or app. My featured project automates that whole path, from raw data to emailed alerts.</p>
-      <p>I enjoy work where the answer needs to be clear to people who do not read code. That is why every project on this site is framed as a business question first.</p>
+  <section id="dataset" aria-labelledby="d-h">
+    <h2 id="d-h">Me, as a dataset</h2>
+    <p class="sub">Because that is how I think. Switch the view to explore.</p>
+    <div class="card term reveal">
+      <div class="tbar" aria-hidden="true"><i></i><i></i><i></i><span>prerna.ipynb</span></div>
+      <div class="tabs" role="group" aria-label="View">
+        <button type="button" data-t="head" aria-pressed="true">me.head()</button>
+        <button type="button" data-t="desc" aria-pressed="false">me.describe()</button>
+      </div>
+      <div class="tout"><table class="tt" id="tt"></table><p class="caret" aria-hidden="true"></p></div>
     </div>
   </section>
 
-  <section id="toolkit" aria-labelledby="tk-h">
-    <h2 id="tk-h">My toolkit</h2>
-    <p class="sub">What I use, grouped by what I use it for.</p>
-    <div class="g3">
-      <div class="sk card reveal" style="--c:var(--lilac);--i:0"><h3>Analysis</h3>
-        <ul class="tools"><li>Python</li><li>Pandas</li><li>SQL</li><li>EDA</li></ul></div>
-      <div class="sk card reveal" style="--c:var(--peach);--i:1"><h3>Modelling</h3>
-        <ul class="tools"><li>Scikit-learn</li><li>NLP</li><li>Apriori</li><li>Classification</li></ul></div>
-      <div class="sk card reveal" style="--c:var(--mint);--i:2"><h3>Delivery</h3>
-        <ul class="tools"><li>Streamlit</li><li>Dashboards</li><li>Matplotlib</li><li>Automation</li></ul></div>
+  <section id="radar" aria-labelledby="r-h">
+    <h2 id="r-h">My skills, drawn from my work</h2>
+    <p class="sub">Not self-rated. Each point counts how many of my five projects use that skill.</p>
+    <div class="card rad reveal" id="rad">
+      <svg viewBox="0 0 300 300" role="img" aria-label="Radar chart of skills by number of projects" id="rsvg"></svg>
+      <ul class="lg" id="rlg"></ul>
+      <p class="note">Hover a point or a row. Data comes from the skills table on my Projects page.</p>
     </div>
+  </section>
+
+  <section id="story" aria-labelledby="st-h">
+    <h2 id="st-h">My story</h2>
+    <div class="card story reveal" id="story-c"></div>
+  </section>
+
+  <section id="know" aria-labelledby="k-h">
+    <h2 id="k-h">Get to know me</h2>
+    <p class="sub">Tap a card.</p>
+    <div class="qa" id="qa"></div>
   </section>
 
   <section id="journey" aria-labelledby="j-h">
     <h2 id="j-h">My journey</h2>
-    <div class="card story reveal">
-      <!-- EDIT: replace the placeholders below with your real education, courses and experience -->
-      <ol class="tl">
-        <li><span class="when">Year · Year</span><b>Your degree and college</b><p>Add your course, college and one line on what you focused on.</p></li>
-        <li><span class="when">Year</span><b>A course, certificate or internship</b><p>Add what you learned and one thing you built or achieved.</p></li>
-        <li><span class="when">Now</span><b>Building projects and looking for my first analyst role</b><p>Five projects so far, including an automated analytics system and a live Streamlit app.</p></li>
-      </ol>
-    </div>
+    <div class="card story reveal"><ol class="tl" id="tl"></ol></div>
   </section>
 
-  <section id="values" aria-labelledby="v-h">
-    <h2 id="v-h">How I work</h2>
-    <div class="vals">
-      <div class="reveal" style="--i:0"><b>Question first</b><p>I define what success looks like before I open the data.</p></div>
-      <div class="reveal" style="--i:1"><b>Trustworthy inputs</b><p>Clean, validated data comes before any model or chart.</p></div>
-      <div class="reveal" style="--i:2"><b>Plain-language results</b><p>Findings should make sense to someone who never sees the code.</p></div>
-      <div class="reveal" style="--i:3"><b>Keep learning</b><p>I build small projects to pick up new tools and test ideas.</p></div>
-    </div>
-  </section>
-
-  <section id="case" class="case card reveal" aria-labelledby="l-h">
+  <section id="end" class="case card reveal" aria-labelledby="l-h">
     <div>
       <h2 id="l-h">What I'm looking for</h2>
-      <p>A data analyst role or internship where I can work on real business questions and keep growing. If you have a team that needs someone who cleans, analyses and delivers, I'd love to talk.</p>
+      <p id="looking"></p>
       <a class="btn pri" href="contact.html">Say hello</a>
     </div>
     <div class="kp">
@@ -108,10 +101,104 @@
 </main>
 
 <script>
+/* =====================================================
+   EDIT ONLY THIS BLOCK. The whole page fills itself in.
+   Anything still starting with "ADD" shows in orange so you can spot it.
+   ===================================================== */
+var ME={
+  name:'Prerna',
+  role:'Data Analyst',
+  tagline:'I start with the question a business would ask, then build the cleaning, models and dashboards that answer it.',
+  photo:'',                          /* e.g. 'prerna.jpg' (upload it next to this file) */
+  github:'https://github.com/Prerna-0908',
+  linkedin:'https://www.linkedin.com/in/prerna-dhall',
+  facts:[
+    ['name','Prerna'],
+    ['role','Data Analyst'],
+    ['superpower','Turning messy data into a clear recommendation'],
+    ['favourite_tools','Python, Pandas, SQL, Streamlit'],
+    ['based_in','Ghaziabad, India'],
+    ['education','BCA Data Science (2023-26), MCA Gen AI (2026-28), SRMIST'],
+    ['languages','English, Hindi, Italian (A2), learning Spanish'],
+    ['currently_learning','Generative AI (MCA) and Spanish'],
+    ['hobbies','Dance, reading, learning languages']
+  ],
+  story:[
+    'I got into data because I like finding the reason behind a number. A chart is only useful if it changes a decision, so I begin every project with the question someone would actually ask.',
+    'My work covers the full path: cleaning messy data, exploring it, building models where they help, and packaging the result as a dashboard, alert or app. My featured project automates that whole path, from raw data to emailed alerts.',
+    'I completed my BCA with a specialisation in Data Science at SRM Institute of Science and Technology (2023-26) and am now pursuing an MCA in Generative AI there (2026-28). I want to pair solid analytics with GenAI, so that insights are easier to ask for and easier to explain.'
+  ],
+  know:[
+    {q:'Why data?',a:'Data gives a straight answer to a vague question. My BCA in Data Science showed me how much one clear analysis can change a decision, and I wanted to be the person who finds it.'},
+    {q:'My favourite part of a project',a:'The moment a messy dataset turns into a clear answer. Cleaning takes patience, but the payoff is a chart or an alert that makes the finding obvious.'},
+    {q:'The project I am proudest of',a:'The Automated Analytics System. It takes raw data through cleaning, KPIs, a sales forecast and email alerts into a Streamlit dashboard, so nobody has to rebuild the report by hand.'},
+    {q:'What is next for me?',a:'Pairing analytics with generative AI during my MCA, so people can ask questions of their data in plain language and get answers they can trust.'},
+    {q:'Outside of analysis',a:'I dance, read and collect languages. I speak English and Hindi, I am at A2 in Italian and I am learning Spanish now. Picking up a language feels a lot like learning a new dataset: patterns first, fluency later.'}
+  ],
+  journey:[
+    {when:'2023 - 2026',t:'BCA, specialised in Data Science',d:'SRM Institute of Science and Technology. Where I learned the foundations: Python, SQL, statistics and machine learning.'},
+    {when:'2026 - 2028',t:'MCA, specialised in Generative AI',d:'SRM Institute of Science and Technology. Currently pursuing, with a focus on combining analytics with GenAI.'},
+    {when:'Now',t:'Building projects and looking for my first analyst role',d:'Five projects so far, including an automated analytics system and a live Streamlit app.'}
+  ],
+  looking:'A data analyst role or internship where I can work on real business questions, ideally where analytics meets generative AI. If your team needs someone who cleans, analyses and delivers, I would love to talk.'
+};
+/* skills = number of my 5 projects using each (from the Projects page table) */
+var SK=[['Data prep',3],['EDA',2],['Machine learning',3],['Visualisation',3],['Dashboards & apps',3],['Automation',1]];
+
 (function(){
+  function $(i){return document.getElementById(i)}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function isTodo(s){return /^ADD/.test(s)}
+  function mark(s,tag){return '<'+tag+(isTodo(s)?' class="todo"':'')+'>'+esc(s)+'</'+tag+'>'}
+
   var root=document.documentElement;
   var motionOk=!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window;
   if(motionOk) root.classList.add('anim');
+
+  /* hero */
+  document.title='About — '+ME.name+', '+ME.role;
+  $('tagline').textContent=ME.tagline;
+  $('mename').textContent=ME.name;$('merole').textContent=ME.role;
+  if(ME.photo)$('avatar').innerHTML='<img src="'+esc(ME.photo)+'" alt="'+esc(ME.name)+'">';else $('avatar').textContent=ME.name.charAt(0);
+  var lk='';if(ME.github)lk+='<a class="btn sm" href="'+esc(ME.github)+'" target="_blank" rel="noopener">GitHub</a>';
+  if(ME.linkedin)lk+='<a class="btn sm" href="'+esc(ME.linkedin)+'" target="_blank" rel="noopener">LinkedIn</a>';
+  $('melinks').innerHTML=lk;
+
+  /* dataset terminal */
+  var DESC=[['projects','5'],['machine_learning_projects','3'],['dashboard_or_app_projects','3'],['automation_projects','1'],['lab_tools_built','3'],['live_demos','1'],['business_questions_asked','5']];
+  function tab(v){
+    var rows=v==='head'?ME.facts:DESC;
+    $('tt').innerHTML=rows.map(function(r,i){return '<tr style="--i:'+i+'"><td>'+esc(r[0])+'</td>'+(isTodo(r[1])?'<td class="todo">':'<td>')+esc(r[1])+'</td></tr>'}).join('');
+  }
+  var tb=document.querySelectorAll('[data-t]');
+  tb.forEach(function(b){b.addEventListener('click',function(){tb.forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});tab(b.dataset.t)})});
+  tab('head');
+
+  /* radar */
+  var N=SK.length,R=110,C=150,svg='',pts=[];
+  function xy(i,r){var a=(-90+i*360/N)*Math.PI/180;return [C+r*Math.cos(a),C+r*Math.sin(a)]}
+  for(var k=1;k<=5;k++){svg+='<polygon class="ring" points="'+SK.map(function(_,i){return xy(i,R*k/5).join(',')}).join(' ')+'"/>'}
+  SK.forEach(function(s,i){var p=xy(i,R);svg+='<line class="axis" x1="'+C+'" y1="'+C+'" x2="'+p[0]+'" y2="'+p[1]+'"/>';
+    var l=xy(i,R+22);svg+='<text x="'+l[0]+'" y="'+l[1]+'" text-anchor="'+(l[0]<C-5?'end':l[0]>C+5?'start':'middle')+'" dominant-baseline="middle">'+esc(s[0])+'</text>';
+    pts.push(xy(i,R*s[1]/5))});
+  svg+='<g class="shape"><polygon points="'+pts.map(function(p){return p.join(',')}).join(' ')+'" fill="rgba(var(--lilacrgb),.28)" stroke="var(--lilac)" stroke-width="2.5" stroke-linejoin="round"/>'+
+    pts.map(function(p,i){return '<circle class="pt" data-i="'+i+'" cx="'+p[0]+'" cy="'+p[1]+'" r="5"><title>'+esc(SK[i][0])+': '+SK[i][1]+' of 5 projects</title></circle>'}).join('')+'</g>';
+  $('rsvg').innerHTML=svg;
+  $('rlg').innerHTML=SK.map(function(s,i){return '<li data-i="'+i+'"><span>'+esc(s[0])+'</span><b>'+s[1]+' / 5</b></li>'}).join('');
+  function hl(i,on){var li=document.querySelector('#rlg [data-i="'+i+'"]');if(li)li.classList.toggle('hl',on)}
+  document.querySelectorAll('#rsvg .pt').forEach(function(c){c.addEventListener('mouseenter',function(){hl(c.dataset.i,true)});c.addEventListener('mouseleave',function(){hl(c.dataset.i,false)})});
+  document.querySelectorAll('#rlg li').forEach(function(li){li.addEventListener('mouseenter',function(){var c=document.querySelector('#rsvg .pt[data-i="'+li.dataset.i+'"]');if(c)c.setAttribute('r',9);hl(li.dataset.i,true)});
+    li.addEventListener('mouseleave',function(){var c=document.querySelector('#rsvg .pt[data-i="'+li.dataset.i+'"]');if(c)c.setAttribute('r',5);hl(li.dataset.i,false)})});
+
+  /* story, know me, journey, looking */
+  $('story-c').innerHTML=ME.story.map(function(p){return mark(p,'p')}).join('');
+  var cols=['var(--lilac)','var(--peach)','var(--mint)','var(--lilac)'];
+  $('qa').innerHTML=ME.know.map(function(x,i){return '<button class="qc reveal" type="button" aria-expanded="false" style="--c:'+cols[i%4]+';--i:'+i+'"><small>Q'+(i+1)+'</small><b>'+esc(x.q)+'</b>'+mark(x.a,'p')+'</button>'}).join('');
+  document.querySelectorAll('.qc').forEach(function(b){b.addEventListener('click',function(){b.setAttribute('aria-expanded',String(b.getAttribute('aria-expanded')!=='true'))})});
+  $('tl').innerHTML=ME.journey.map(function(j){return '<li><span class="when'+(isTodo(j.when)?' todo':'')+'">'+esc(j.when)+'</span><b'+(isTodo(j.t)?' class="todo"':'')+'>'+esc(j.t)+'</b>'+mark(j.d,'p')+'</li>'}).join('');
+  $('looking').textContent=ME.looking;
+
+  /* reveal + spotlight-free progress bar */
   if(motionOk){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){
       if(!e.isIntersecting)return;var el=e.target;el.classList.add('in');
@@ -119,11 +206,9 @@
     })},{threshold:0.12});
     document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
   }
-  var sp=document.getElementById('sp');
-  addEventListener('scroll',function(){
-    var h=document.documentElement;
-    sp.style.transform='scaleX('+(h.scrollTop/((h.scrollHeight-h.clientHeight)||1))+')';
-  },{passive:true});
+  var sp=$('sp');
+  addEventListener('scroll',function(){var h=document.documentElement;
+    sp.style.transform='scaleX('+(h.scrollTop/((h.scrollHeight-h.clientHeight)||1))+')'},{passive:true});
 })();
 </script>
 </body>
