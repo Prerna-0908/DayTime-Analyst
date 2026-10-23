@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="project.css?v=2">
-<link rel="stylesheet" href="about.css?v=2">
+<link rel="stylesheet" href="about.css?v=3">
 </head>
 <body>
 <div class="sp" id="sp" aria-hidden="true"></div>
@@ -60,12 +60,8 @@
 
   <section id="radar" aria-labelledby="r-h">
     <h2 id="r-h">My skills, drawn from my work</h2>
-    <p class="sub">Not self-rated. Each point counts how many of my five projects use that skill.</p>
-    <div class="card rad reveal" id="rad">
-      <svg viewBox="0 0 440 300" role="img" aria-label="Radar chart of skills by number of projects" id="rsvg"></svg>
-      <ul class="lg" id="rlg"></ul>
-      <p class="note">Hover a point or a row. Data comes from the skills table on my Projects page.</p>
-    </div>
+    <p class="sub">Not self-rated. Each circle is one of my five projects; a filled circle means that project uses the skill.</p>
+    <div class="card sb reveal" id="sb"></div>
   </section>
 
   <section id="story" aria-labelledby="st-h">
@@ -142,7 +138,8 @@ var ME={
   looking:'A data analyst role or internship where I can work on real business questions, ideally where analytics meets generative AI. If your team needs someone who cleans, analyses and delivers, I would love to talk.'
 };
 /* skills = number of my 5 projects using each (from the Projects page table) */
-var SK=[['Data prep',3],['EDA',2],['Machine learning',3],['Visualisation',3],['Dashboards & apps',3],['Automation',1]];
+var PN=['Automated Analytics System','Fake Job Detection','AI Interview Generator','Market Basket Analysis','HR Attrition Analysis'];
+var SK=[['Data prep',[1,1,0,1,0]],['EDA',[0,1,0,0,1]],['Machine learning',[1,1,0,1,0]],['Visualisation',[1,1,0,0,1]],['Dashboards & apps',[1,0,1,0,1]],['Automation',[1,0,0,0,0]]];
 
 (function(){
   function $(i){return document.getElementById(i)}
@@ -173,21 +170,14 @@ var SK=[['Data prep',3],['EDA',2],['Machine learning',3],['Visualisation',3],['D
   tb.forEach(function(b){b.addEventListener('click',function(){tb.forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});tab(b.dataset.t)})});
   tab('head');
 
-  /* radar */
-  var N=SK.length,R=110,CX=220,CY=150,svg='',pts=[];
-  function xy(i,r){var a=(-90+i*360/N)*Math.PI/180;return [CX+r*Math.cos(a),CY+r*Math.sin(a)]}
-  for(var k=1;k<=5;k++){svg+='<polygon class="ring" fill="none" stroke="var(--line)" points="'+SK.map(function(_,i){return xy(i,R*k/5).join(',')}).join(' ')+'"/>'}
-  SK.forEach(function(s,i){var p=xy(i,R);svg+='<line class="axis" stroke="var(--line)" x1="'+CX+'" y1="'+CY+'" x2="'+p[0]+'" y2="'+p[1]+'"/>';
-    var l=xy(i,R+22);svg+='<text font-size="12" font-weight="700" fill="var(--ink)" x="'+l[0]+'" y="'+l[1]+'" text-anchor="'+(l[0]<CX-5?'end':l[0]>CX+5?'start':'middle')+'" dominant-baseline="middle">'+esc(s[0])+'</text>';
-    pts.push(xy(i,R*s[1]/5))});
-  svg+='<g class="shape"><polygon points="'+pts.map(function(p){return p.join(',')}).join(' ')+'" fill="rgba(var(--lilacrgb),.28)" stroke="var(--lilac)" stroke-width="2.5" stroke-linejoin="round"/>'+
-    pts.map(function(p,i){return '<circle class="pt" fill="var(--peach)" data-i="'+i+'" cx="'+p[0]+'" cy="'+p[1]+'" r="5"><title>'+esc(SK[i][0])+': '+SK[i][1]+' of 5 projects</title></circle>'}).join('')+'</g>';
-  $('rsvg').innerHTML=svg;
-  $('rlg').innerHTML=SK.map(function(s,i){return '<li data-i="'+i+'"><span>'+esc(s[0])+'</span><b>'+s[1]+' / 5</b></li>'}).join('');
-  function hl(i,on){var li=document.querySelector('#rlg [data-i="'+i+'"]');if(li)li.classList.toggle('hl',on)}
-  document.querySelectorAll('#rsvg .pt').forEach(function(c){c.addEventListener('mouseenter',function(){hl(c.dataset.i,true)});c.addEventListener('mouseleave',function(){hl(c.dataset.i,false)})});
-  document.querySelectorAll('#rlg li').forEach(function(li){li.addEventListener('mouseenter',function(){var c=document.querySelector('#rsvg .pt[data-i="'+li.dataset.i+'"]');if(c)c.setAttribute('r',9);hl(li.dataset.i,true)});
-    li.addEventListener('mouseleave',function(){var c=document.querySelector('#rsvg .pt[data-i="'+li.dataset.i+'"]');if(c)c.setAttribute('r',5);hl(li.dataset.i,false)})});
+  /* skills proof strip */
+  var PC=['var(--lilac)','var(--peach)','var(--mint)','var(--lilac)','var(--peach)'];
+  $('sb').innerHTML=SK.map(function(r,i){
+    var n=r[1].reduce(function(a,b){return a+b},0);
+    return '<div class="sr" style="--i:'+i+'"><span class="sn2">'+esc(r[0])+'</span><span class="sc">'+
+      r[1].map(function(on,j){return '<i class="'+(on?'on':'')+'" style="--c:'+PC[j]+';--j:'+j+'" title="'+esc(PN[j])+(on?': uses this skill':': does not use this skill')+'">P'+(j+1)+'</i>'}).join('')+
+      '</span><b>'+n+' / 5</b></div>';
+  }).join('')+'<p class="note">'+PN.map(function(n,j){return 'P'+(j+1)+' '+esc(n)}).join(' · ')+'</p>';
 
   /* story, know me, journey, looking */
   $('story-c').innerHTML=ME.story.map(function(p){return mark(p,'p')}).join('');
