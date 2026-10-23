@@ -1,50 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact – Portfolio</title>
-    <link rel="stylesheet" href="contact.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Prerna, Data Analyst</title>
+<meta name="description" content="Get in touch with Prerna: email, GitHub, LinkedIn and Kaggle, or send a message directly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="project.css?v=2">
+<link rel="stylesheet" href="contact.css?v=1">
 </head>
-
 <body>
-    <header>
-        <h1 class="title">Let’s Connect</h1>
-        <p class="subtitle">Step into my world—don’t be shy.</p>
-    </header>
-
-<div class="contact-container">
-
-    <!-- Email -->
-    <div class="contact-card">
-        <h2>Email</h2>
-        <p>Drop a message!</p>
-        <a href="mailto:dhallp777@gmail.com" class="btn">Send Email</a>
+<div class="sp" id="sp" aria-hidden="true"></div>
+<nav class="top" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="index.html">Prerna<span>.</span></a>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="project.html">Projects</a>
+      <a href="lab.html">Analytics Lab</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" aria-current="page">Contact</a>
     </div>
+    <div class="right"><a class="btn pri sm" href="resume.pdf">Resume</a></div>
+  </div>
+</nav>
 
-    <!-- GitHub -->
-    <div class="contact-card">
-        <h2>GitHub</h2>
-        <p>Where the code magic lives.</p>
-        <a href="https://github.com/Prerna-0908" target="_blank" class="btn">Visit GitHub</a>
+<main id="main" class="wrap pg contact">
+  <header class="ph lh">
+    <span class="orb o3" aria-hidden="true"></span><span class="orb o1" aria-hidden="true"></span><span class="orb o2" aria-hidden="true"></span>
+    <div>
+      <span class="tag fx" style="--d:0">Contact</span>
+      <h1 class="fx" style="--d:1">Let's <span>connect.</span></h1>
+      <p class="lede fx" style="--d:2">Hiring, collaborating, or just curious about a project? Pick whichever way suits you, I read everything.</p>
+      <p class="fx" style="--d:3"><span class="avail">Open to data analyst roles and internships</span></p>
     </div>
+  </header>
 
-    <!-- LinkedIn -->
-    <div class="contact-card">
-        <h2>LinkedIn</h2>
-        <p>Professional but still mysterious.</p>
-        <a href="https://www.linkedin.com/in/prerna-dhall/" 
-           target="_blank" class="btn">View Profile</a>
+  <section id="channels" aria-labelledby="ch-h">
+    <h2 id="ch-h">Find me here</h2>
+    <div class="cgrid" id="cgrid"></div>
+  </section>
+
+  <section id="message" aria-labelledby="m-h">
+    <h2 id="m-h">Send me a message</h2>
+    <div class="card fm reveal">
+      <div class="side">
+        <h3>A good first message</h3>
+        <p>It helps me reply faster and better if you include:</p>
+        <ul class="tips">
+          <li>Who you are, or your team</li>
+          <li>What you have in mind</li>
+          <li>Any timeline or link I should look at</li>
+        </ul>
+      </div>
+      <form class="form" id="form" novalidate>
+        <div class="topics" role="group" aria-label="What is this about?" id="topics">
+          <button class="chip" type="button" aria-pressed="true">Job opportunity</button>
+          <button class="chip" type="button" aria-pressed="false">Collaboration</button>
+          <button class="chip" type="button" aria-pressed="false">Project feedback</button>
+          <button class="chip" type="button" aria-pressed="false">Just saying hi</button>
+        </div>
+        <div class="two">
+          <label>Your name<input id="fn" type="text" autocomplete="name" placeholder="Jane Doe"></label>
+          <label>Your email<input id="fe" type="email" autocomplete="email" placeholder="jane@company.com"></label>
+        </div>
+        <label>Message<textarea id="fmsg" placeholder="Hi Prerna, I saw your Automated Analytics project and…"></textarea></label>
+        <div class="row"><button class="btn pri" type="submit">Open in my email app</button><button class="btn" type="button" id="copy">Copy message</button></div>
+        <p class="fnote" id="fnote" role="status" aria-live="polite"></p>
+      </form>
     </div>
+  </section>
 
-</div>
-
- <!-- Kaggle -->
-    <div class="contact-card">
-        <h2>Kaggle</h2>
-        <p>Project Hub.</p>
-        <a href="https://www.kaggle.com/prernadhall" 
-           target="_blank" class="btn">View Profile</a>
-
+  <section id="end" class="case card reveal" aria-labelledby="e-h">
+    <div>
+      <h2 id="e-h">Prefer to look around first?</h2>
+      <p>See how I turn business questions into dashboards, models and alerts, then come back and say hello. Ciao, hola, namaste: you can write to me in English, Hindi, or even practise your Italian with me.</p>
+      <div class="row"><a class="btn pri" href="project.html">See my projects</a><a class="btn" href="lab.html">Try the Analytics Lab</a><a class="btn" href="resume.pdf">Download resume</a></div>
     </div>
+    <div class="kp">
+      <div><b>5</b><span>Projects</span></div>
+      <div><b>3</b><span>Lab tools</span></div>
+      <div><b>1</b><span>Live demo</span></div>
+      <div><b>4</b><span>Ways to reach me</span></div>
+    </div>
+  </section>
+</main>
 
+<script>
+/* =====================================================
+   EDIT ONLY THIS BLOCK. Put your real email below.
+   ===================================================== */
+var CONTACT={
+  email:'ADD your email address',
+  github:'https://github.com/Prerna-0908',
+  linkedin:'https://www.linkedin.com/in/prerna-dhall/',
+  kaggle:'https://www.kaggle.com/prernadhall'
+};
+
+(function(){
+  function $(i){return document.getElementById(i)}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  var hasMail=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(CONTACT.email);
+  var root=document.documentElement;
+  var motionOk=!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window;
+  if(motionOk) root.classList.add('anim');
+
+  /* channel cards */
+  var CH=[
+    {i:'✉️',t:'Email',d:'Drop a message!',c:'var(--lilac)',v:hasMail?CONTACT.email:CONTACT.email,
+      b:hasMail?'<a class="btn pri sm" href="mailto:'+esc(CONTACT.email)+'">Send email</a><button class="btn sm" type="button" id="cpe">Copy address</button>':'<span class="todo">Add your email in the CONTACT block</span>'},
+    {i:'💻',t:'GitHub',d:'Where the code magic lives.',c:'var(--peach)',v:'github.com/Prerna-0908',b:'<a class="btn pri sm" href="'+esc(CONTACT.github)+'" target="_blank" rel="noopener">Visit GitHub</a>'},
+    {i:'💼',t:'LinkedIn',d:'Professional but still mysterious.',c:'var(--mint)',v:'linkedin.com/in/prerna-dhall',b:'<a class="btn pri sm" href="'+esc(CONTACT.linkedin)+'" target="_blank" rel="noopener">View profile</a>'},
+    {i:'📊',t:'Kaggle',d:'Project hub.',c:'var(--lilac)',v:'kaggle.com/prernadhall',b:'<a class="btn pri sm" href="'+esc(CONTACT.kaggle)+'" target="_blank" rel="noopener">View profile</a>'}
+  ];
+  $('cgrid').innerHTML=CH.map(function(c,i){
+    return '<article class="cc card reveal" style="--c:'+c.c+';--i:'+(i%2)+'"><span class="ico" aria-hidden="true">'+c.i+'</span><h3>'+c.t+'</h3><p>'+c.d+'</p><span class="val'+(hasMail||c.t!=='Email'?'':' todo')+'">'+esc(c.v)+'</span><div class="row">'+c.b+'</div></article>';
+  }).join('');
+  var cpe=$('cpe');
+  if(cpe)cpe.addEventListener('click',function(){navigator.clipboard&&navigator.clipboard.writeText(CONTACT.email).then(function(){cpe.textContent='Copied!';setTimeout(function(){cpe.textContent='Copy address'},1800)})});
+
+  /* topic chips */
+  var chips=document.querySelectorAll('#topics .chip');
+  chips.forEach(function(c){c.addEventListener('click',function(){chips.forEach(function(x){x.setAttribute('aria-pressed',String(x===c))})})});
+  function topic(){var t='';chips.forEach(function(c){if(c.getAttribute('aria-pressed')==='true')t=c.textContent});return t}
+
+  /* form: opens the visitor's email app, no server needed */
+  var note=$('fnote');
+  function build(){
+    var n=$('fn').value.trim(),e=$('fe').value.trim(),m=$('fmsg').value.trim();
+    if(!m){note.className='fnote err';note.textContent='Please write a short message first.';return null}
+    note.className='fnote';
+    return {subject:'['+topic()+'] Message from '+(n||'your portfolio'),body:m+'\n\n— '+(n||'')+(e?'\n'+e:'')};
+  }
+  $('form').addEventListener('submit',function(ev){
+    ev.preventDefault();var r=build();if(!r)return;
+    if(!hasMail){note.className='fnote err';note.textContent='The site owner has not added an email address yet. Use LinkedIn above for now.';return}
+    location.href='mailto:'+CONTACT.email+'?subject='+encodeURIComponent(r.subject)+'&body='+encodeURIComponent(r.body);
+    note.textContent='Opening your email app. If nothing happens, use "Copy message" and send it manually.';
+  });
+  $('copy').addEventListener('click',function(){
+    var r=build();if(!r)return;
+    var txt='Subject: '+r.subject+'\n\n'+r.body;
+    navigator.clipboard?navigator.clipboard.writeText(txt).then(function(){note.textContent='Message copied.'}):note.textContent='Copy is not supported in this browser.';
+  });
+
+  /* reveal + progress bar */
+  if(motionOk){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting)return;var el=e.target;el.classList.add('in');
+      setTimeout(function(){el.classList.add('settled')},900);io.unobserve(el);
+    })},{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  }
+  var sp=$('sp');
+  addEventListener('scroll',function(){var h=document.documentElement;
+    sp.style.transform='scaleX('+(h.scrollTop/((h.scrollHeight-h.clientHeight)||1))+')'},{passive:true});
+})();
+</script>
+</body>
+</html>
