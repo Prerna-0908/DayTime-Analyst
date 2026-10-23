@@ -1,89 +1,36 @@
-/* ===== Base Styling ===== */
-body {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    background: #0b0b0b; /* Deep dark aesthetic */
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 60px;
-}
+/* Contact page. Load AFTER style.css and project.css */
+.contact section{margin-top:56px}
+.contact .row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+.todo{color:var(--peach);font-style:italic}
+.lh{grid-template-columns:1fr}
+.avail{display:inline-flex;align-items:center;gap:9px;margin-top:6px;padding:8px 16px;border-radius:99px;background:var(--fill2);border:1px solid var(--line);font-weight:700;font-size:.9rem}
+.avail:before{content:"";width:10px;height:10px;border-radius:50%;background:var(--mint);animation:ring 1.6s ease-out infinite}
 
-/* ===== Title ===== */
-.title {
-    font-size: 50px;
-    letter-spacing: 2px;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: #ffffff;
-    text-align: center;
-}
+/* channel cards */
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.cc{position:relative;overflow:hidden;padding:26px;display:flex;flex-direction:column;gap:10px;transition:transform .3s,box-shadow .3s,border-color .3s}
+.cc:before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:linear-gradient(90deg,var(--c),transparent)}
+.cc:hover{transform:translateY(-5px);border-color:var(--c);box-shadow:0 22px 50px rgba(var(--lilacrgb),.16)}
+.cc .ico{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:1.6rem;background:var(--fill2);border:1px solid var(--line)}
+.cc h3{margin:4px 0 0;font-size:1.3rem}
+.cc p{margin:0;color:var(--muted)}
+.cc .val{font-family:var(--mono);font-size:.84rem;font-weight:700;color:var(--c);word-break:break-all}
+.cc .row{margin-top:auto;padding-top:6px}
+.anim .cc.reveal.in:hover{transform:translateY(-5px)}
 
-.subtitle {
-    margin-top: -10px;
-    color: #b9b9b9;
-    font-size: 18px;
-    text-align: center;
-}
+/* message form */
+.fm{padding:30px;display:grid;grid-template-columns:.8fr 1.2fr;gap:34px;align-items:start}
+.fm h3{margin:0 0 8px;font-size:1.4rem}
+.fm .side p{color:var(--muted);line-height:1.7;margin:0 0 14px}
+.tips{margin:0;padding-left:20px;color:var(--li);line-height:1.8}
+.form{display:grid;gap:14px}
+.form label{font-weight:700;font-size:.9rem;display:grid;gap:6px}
+.form input,.form textarea{font:inherit;font-weight:500;color:var(--ink);padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:var(--fill2);width:100%;box-sizing:border-box}
+.form textarea{min-height:130px;resize:vertical}
+.form input:focus,.form textarea:focus{outline:2px solid var(--lilac);outline-offset:2px}
+.form .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.topics{display:flex;gap:8px;flex-wrap:wrap}
+.fnote{margin:0;font-size:.88rem;color:var(--muted);min-height:1.3em}
+.fnote.err{color:#d6455d;font-weight:600}
 
-/* ===== Contact Container ===== */
-.contact-container {
-    margin-top: 50px;
-    display: flex;
-    gap: 35px;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-bottom: 60px;
-}
-
-/* ===== Contact Card ===== */
-.contact-card {
-    background: #111111;
-    padding: 30px;
-    width: 270px;
-    border-radius: 18px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-    transition: all 0.35s ease;
-}
-
-.contact-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 0 40px rgba(255, 255, 255, 0.12);
-}
-
-/* ===== Text Inside Cards ===== */
-.contact-card h2 {
-    font-size: 26px;
-    color: #fff;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.contact-card p {
-    font-size: 15px;
-    color: #cfcfcf;
-    margin-bottom: 20px;
-}
-
-/* ===== Button Styling ===== */
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    background: #ffffff;
-    color: #000;
-    font-weight: 600;
-    border-radius: 30px;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    transition: 0.3s ease;
-}
-
-.btn:hover {
-    background: #c7c7c7;
-    color: #000;
-    transform: scale(1.04);
-}
+@media (max-width:900px){.cgrid,.fm,.form .two{grid-template-columns:1fr}}
